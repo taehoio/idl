@@ -12,12 +12,13 @@ for FILE in ${PROTOS}; do
   FILE=$IDL_PATH${FILE#.}
 
   # generate gRPC stub
-  docker run --rm -it --name grpcio-tools -v $(pwd):$IDL_PATH -w $IDL_PATH xissy/grpcio-tools:v0.0.1 \
+  docker run --rm -it --name grpcio-tools -v $(pwd):$IDL_PATH -w $IDL_PATH xissy/grpcio-tools:v0.0.2 \
     -I/go/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
     -I/go/src/github.com/grpc-ecosystem/grpc-gateway \
     -I$IDL_PATH/protos \
-    --python_out=:$OUT \
+    -I/go/src \
+    --proto_path=$IDL_PATH \
+    --python_out=$OUT \
     --grpc_python_out=$OUT \
     $FILE
 done
-
