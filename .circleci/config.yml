@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/buildpack-deps
+    working_directory: ~/go/src/github.com/taeho-io/idl
     steps:
       - checkout
       - setup_remote_docker:
