@@ -11,3 +11,7 @@ generate:
 clean:
 	rm -rf generated
 
+.PHONY: diff
+diff:
+	git diff --exit-code
+
