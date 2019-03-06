@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='id/id.proto',
   package='id',
   syntax='proto3',
-  serialized_pb=_b('\n\x0bid/id.proto\x12\x02id\"\x0c\n\nNewRequest\"\x19\n\x0bNewResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x32.\n\x02Id\x12(\n\x03New\x12\x0e.id.NewRequest\x1a\x0f.id.NewResponse\"\x00\x42)Z\'github.com/taeho-io/idl/generated/go/idb\x06proto3')
+  serialized_pb=_b('\n\x0bid/id.proto\x12\x02id\"\x0c\n\nNewRequest\"\x19\n\x0bNewResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x32.\n\x02Id\x12(\n\x03New\x12\x0e.id.NewRequest\x1a\x0f.id.NewResponse\"\x00\x42#Z!github.com/taeho-io/idl/gen/go/idb\x06proto3')
 )
 
 
@@ -99,7 +99,7 @@ _sym_db.RegisterMessage(NewResponse)
 
 
 DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\'github.com/taeho-io/idl/generated/go/id'))
+DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z!github.com/taeho-io/idl/gen/go/id'))
 
 _ID = _descriptor.ServiceDescriptor(
   name='Id',

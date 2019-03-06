@@ -9,7 +9,7 @@ generate:
 
 .PHONY: clean
 clean:
-	rm -rf generated
+	rm -rf gen
 
 .PHONY: diff
 diff:

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "github.com/taeho-io/idl/generated/go/auth";
+option go_package = "github.com/taeho-io/idl/gen/go/auth";
 
 import "google/api/annotations.proto";
 import "github.com/lyft/protoc-gen-validate/validate/validate.proto";

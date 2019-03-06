@@ -2,7 +2,7 @@
 
 PROTOS=`find ./protos -name '*.proto'`
 PROTO_DIRS=$(echo ${PROTOS} | xargs -n1 dirname | sort -u)
-OUT="generated/go/"
+OUT="gen/go/"
 
 mkdir -p $OUT
 

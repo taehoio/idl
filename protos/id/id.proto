@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package id;
 
-option go_package = "github.com/taeho-io/idl/generated/go/id";
+option go_package = "github.com/taeho-io/idl/gen/go/id";
 
 service Id {
     rpc New (NewRequest) returns (NewResponse) {}
