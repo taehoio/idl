@@ -2,7 +2,7 @@
 
 PROTOS=`find ./protos -name '*.proto'`
 PROTO_DIRS=$(echo ${PROTOS} | xargs -n1 dirname | sort -u)
-OUT="generated/go/"
+OUT="generated/swift/"
 
 mkdir -p $OUT
 
@@ -16,8 +16,9 @@ for FILE in ${PROTOS}; do
     -I/go/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
     -I/go/src/github.com/grpc-ecosystem/grpc-gateway \
     -I$IDL_PATH/protos \
-    --go_out=plugins=grpc:/go/src/ \
-    --grpc-gateway_out=logtostderr=true:/go/src/ \
+    --swift_out=./generated/swift/ \
+    --swiftgrpc_out=Client=true,Server=false:./generated/swift/ \
+    --swiftgrpcrx_out=./generated/swift/ \
     $FILE
 done
 
