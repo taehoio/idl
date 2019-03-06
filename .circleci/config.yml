@@ -1,13 +1,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/buildpack-deps
+    machine: true
     working_directory: ~/go/src/github.com/taeho-io/idl
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
       - run:
           name: Generate
           command: |
