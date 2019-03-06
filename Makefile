@@ -14,4 +14,5 @@ clean:
 .PHONY: diff
 diff:
 	git diff --exit-code
+	./scripts/diff.sh
 
