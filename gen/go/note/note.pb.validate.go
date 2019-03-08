@@ -59,6 +59,20 @@ func (m *CreateRequest) Validate() error {
 
 	// no validation rules for Body
 
+	if m.GetCreatedAt() <= 0 {
+		return CreateRequestValidationError{
+			field:  "CreatedAt",
+			reason: "value must be greater than 0",
+		}
+	}
+
+	if m.GetUpdatedAt() <= 0 {
+		return CreateRequestValidationError{
+			field:  "UpdatedAt",
+			reason: "value must be greater than 0",
+		}
+	}
+
 	return nil
 }
 
@@ -581,6 +595,13 @@ func (m *UpdateRequest) Validate() error {
 	// no validation rules for Title
 
 	// no validation rules for Body
+
+	if m.GetUpdatedAt() <= 0 {
+		return UpdateRequestValidationError{
+			field:  "UpdatedAt",
+			reason: "value must be greater than 0",
+		}
+	}
 
 	return nil
 }

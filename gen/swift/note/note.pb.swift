@@ -76,6 +76,10 @@ struct Note_CreateRequest {
 
   var body: String = String()
 
+  var createdAt: Int64 = 0
+
+  var updatedAt: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -192,6 +196,8 @@ struct Note_UpdateRequest {
 
   var body: String = String()
 
+  var updatedAt: Int64 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -248,6 +254,8 @@ extension Note_CreateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     2: .standard(proto: "body_type"),
     3: .same(proto: "title"),
     4: .same(proto: "body"),
+    5: .standard(proto: "created_at"),
+    6: .standard(proto: "updated_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -257,6 +265,8 @@ extension Note_CreateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 2: try decoder.decodeSingularEnumField(value: &self.bodyType)
       case 3: try decoder.decodeSingularStringField(value: &self.title)
       case 4: try decoder.decodeSingularStringField(value: &self.body)
+      case 5: try decoder.decodeSingularInt64Field(value: &self.createdAt)
+      case 6: try decoder.decodeSingularInt64Field(value: &self.updatedAt)
       default: break
       }
     }
@@ -275,6 +285,12 @@ extension Note_CreateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.body.isEmpty {
       try visitor.visitSingularStringField(value: self.body, fieldNumber: 4)
     }
+    if self.createdAt != 0 {
+      try visitor.visitSingularInt64Field(value: self.createdAt, fieldNumber: 5)
+    }
+    if self.updatedAt != 0 {
+      try visitor.visitSingularInt64Field(value: self.updatedAt, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -283,6 +299,8 @@ extension Note_CreateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.bodyType != rhs.bodyType {return false}
     if lhs.title != rhs.title {return false}
     if lhs.body != rhs.body {return false}
+    if lhs.createdAt != rhs.createdAt {return false}
+    if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -547,6 +565,7 @@ extension Note_UpdateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     2: .standard(proto: "body_type"),
     3: .same(proto: "title"),
     4: .same(proto: "body"),
+    5: .standard(proto: "updated_at"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -556,6 +575,7 @@ extension Note_UpdateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
       case 2: try decoder.decodeSingularEnumField(value: &self.bodyType)
       case 3: try decoder.decodeSingularStringField(value: &self.title)
       case 4: try decoder.decodeSingularStringField(value: &self.body)
+      case 5: try decoder.decodeSingularInt64Field(value: &self.updatedAt)
       default: break
       }
     }
@@ -574,6 +594,9 @@ extension Note_UpdateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if !self.body.isEmpty {
       try visitor.visitSingularStringField(value: self.body, fieldNumber: 4)
     }
+    if self.updatedAt != 0 {
+      try visitor.visitSingularInt64Field(value: self.updatedAt, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -582,6 +605,7 @@ extension Note_UpdateRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     if lhs.bodyType != rhs.bodyType {return false}
     if lhs.title != rhs.title {return false}
     if lhs.body != rhs.body {return false}
+    if lhs.updatedAt != rhs.updatedAt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

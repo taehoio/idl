@@ -25,6 +25,8 @@ message CreateRequest {
     BodyType body_type = 2 [(validate.rules).enum.defined_only = true];
     string title = 3;
     string body = 4;
+    int64 created_at = 5 [(validate.rules).int64.gt = 0];
+    int64 updated_at = 6 [(validate.rules).int64.gt = 0];
 }
 
 message CreateResponse {
@@ -69,6 +71,7 @@ message UpdateRequest {
     BodyType body_type = 2;
     string title = 3;
     string body = 4;
+    int64 updated_at = 5 [(validate.rules).int64.gt = 0];
 }
 
 message UpdateResponse {
