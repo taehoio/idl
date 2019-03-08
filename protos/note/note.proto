@@ -4,6 +4,7 @@ package note;
 
 option go_package = "github.com/taeho-io/idl/gen/go/note";
 
+import "google/protobuf/timestamp.proto";
 import "github.com/lyft/protoc-gen-validate/validate/validate.proto";
 
 service Note {
@@ -25,8 +26,8 @@ message CreateRequest {
     BodyType body_type = 2 [(validate.rules).enum.defined_only = true];
     string title = 3;
     string body = 4;
-    int64 created_at = 5 [(validate.rules).int64.gt = 0];
-    int64 updated_at = 6 [(validate.rules).int64.gt = 0];
+    google.protobuf.Timestamp created_at = 5;
+    google.protobuf.Timestamp updated_at = 6;
 }
 
 message CreateResponse {
@@ -43,8 +44,8 @@ message GetResponse {
     int64 created_by = 3;
     string title = 4;
     string body = 5;
-    int64 created_at = 6;
-    int64 updated_at = 7;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
 }
 
 message NoteMessage {
@@ -53,8 +54,8 @@ message NoteMessage {
     int64 created_by = 3;
     string title = 4;
     string body = 5;
-    int64 created_at = 6;
-    int64 updated_at = 7;
+    google.protobuf.Timestamp created_at = 6;
+    google.protobuf.Timestamp updated_at = 7;
 }
 
 message ListRequest {
@@ -71,7 +72,7 @@ message UpdateRequest {
     BodyType body_type = 2;
     string title = 3;
     string body = 4;
-    int64 updated_at = 5 [(validate.rules).int64.gt = 0];
+    google.protobuf.Timestamp updated_at = 5;
 }
 
 message UpdateResponse {

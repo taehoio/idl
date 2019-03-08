@@ -59,17 +59,23 @@ func (m *CreateRequest) Validate() error {
 
 	// no validation rules for Body
 
-	if m.GetCreatedAt() <= 0 {
-		return CreateRequestValidationError{
-			field:  "CreatedAt",
-			reason: "value must be greater than 0",
+	if v, ok := interface{}(m.GetCreatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return CreateRequestValidationError{
+				field:  "CreatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
 		}
 	}
 
-	if m.GetUpdatedAt() <= 0 {
-		return CreateRequestValidationError{
-			field:  "UpdatedAt",
-			reason: "value must be greater than 0",
+	if v, ok := interface{}(m.GetUpdatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return CreateRequestValidationError{
+				field:  "UpdatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
 		}
 	}
 
@@ -286,9 +292,25 @@ func (m *GetResponse) Validate() error {
 
 	// no validation rules for Body
 
-	// no validation rules for CreatedAt
+	if v, ok := interface{}(m.GetCreatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetResponseValidationError{
+				field:  "CreatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
-	// no validation rules for UpdatedAt
+	if v, ok := interface{}(m.GetUpdatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return GetResponseValidationError{
+				field:  "UpdatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
@@ -365,9 +387,25 @@ func (m *NoteMessage) Validate() error {
 
 	// no validation rules for Body
 
-	// no validation rules for CreatedAt
+	if v, ok := interface{}(m.GetCreatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NoteMessageValidationError{
+				field:  "CreatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
-	// no validation rules for UpdatedAt
+	if v, ok := interface{}(m.GetUpdatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return NoteMessageValidationError{
+				field:  "UpdatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
+		}
+	}
 
 	return nil
 }
@@ -596,10 +634,13 @@ func (m *UpdateRequest) Validate() error {
 
 	// no validation rules for Body
 
-	if m.GetUpdatedAt() <= 0 {
-		return UpdateRequestValidationError{
-			field:  "UpdatedAt",
-			reason: "value must be greater than 0",
+	if v, ok := interface{}(m.GetUpdatedAt()).(interface{ Validate() error }); ok {
+		if err := v.Validate(); err != nil {
+			return UpdateRequestValidationError{
+				field:  "UpdatedAt",
+				reason: "embedded message failed validation",
+				cause:  err,
+			}
 		}
 	}
 
