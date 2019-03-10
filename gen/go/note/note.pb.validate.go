@@ -44,7 +44,7 @@ func (m *CreateRequest) Validate() error {
 	if !_CreateRequest_NoteId_Pattern.MatchString(m.GetNoteId()) {
 		return CreateRequestValidationError{
 			field:  "NoteId",
-			reason: "value does not match regex pattern \"^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"",
+			reason: "value does not match regex pattern \"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89AB][0-9a-f]{3}-[0-9a-f]{12}$\"",
 		}
 	}
 
@@ -143,7 +143,7 @@ var _ interface {
 	ErrorName() string
 } = CreateRequestValidationError{}
 
-var _CreateRequest_NoteId_Pattern = regexp.MustCompile("^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$")
+var _CreateRequest_NoteId_Pattern = regexp.MustCompile("^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89AB][0-9a-f]{3}-[0-9a-f]{12}$")
 
 // Validate checks the field values on CreateResponse with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
@@ -631,7 +631,7 @@ func (m *UpdateRequest) Validate() error {
 	if !_UpdateRequest_NoteId_Pattern.MatchString(m.GetNoteId()) {
 		return UpdateRequestValidationError{
 			field:  "NoteId",
-			reason: "value does not match regex pattern \"^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"",
+			reason: "value does not match regex pattern \"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89AB][0-9a-f]{3}-[0-9a-f]{12}$\"",
 		}
 	}
 
@@ -708,7 +708,7 @@ var _ interface {
 	ErrorName() string
 } = UpdateRequestValidationError{}
 
-var _UpdateRequest_NoteId_Pattern = regexp.MustCompile("^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$")
+var _UpdateRequest_NoteId_Pattern = regexp.MustCompile("^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89AB][0-9a-f]{3}-[0-9a-f]{12}$")
 
 // Validate checks the field values on UpdateResponse with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
@@ -786,7 +786,7 @@ func (m *DeleteRequest) Validate() error {
 	if !_DeleteRequest_NoteId_Pattern.MatchString(m.GetNoteId()) {
 		return DeleteRequestValidationError{
 			field:  "NoteId",
-			reason: "value does not match regex pattern \"^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"",
+			reason: "value does not match regex pattern \"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89AB][0-9a-f]{3}-[0-9a-f]{12}$\"",
 		}
 	}
 
@@ -847,7 +847,7 @@ var _ interface {
 	ErrorName() string
 } = DeleteRequestValidationError{}
 
-var _DeleteRequest_NoteId_Pattern = regexp.MustCompile("^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$")
+var _DeleteRequest_NoteId_Pattern = regexp.MustCompile("^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89AB][0-9a-f]{3}-[0-9a-f]{12}$")
 
 // Validate checks the field values on DeleteResponse with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
