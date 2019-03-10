@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='note/note.proto',
   package='note',
   syntax='proto3',
-  serialized_pb=_b('\n\x0fnote/note.proto\x12\x04note\x1a\x1fgoogle/protobuf/timestamp.proto\x1a;github.com/lyft/protoc-gen-validate/validate/validate.proto\"\xdb\x01\n\rCreateRequest\x12\x1e\n\ncreated_by\x18\x01 \x01(\x03\x42\n\xba\xe9\xc0\x03\x05\"\x03 \xe7\x07\x12-\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyTypeB\n\xba\xe9\xc0\x03\x05\x82\x01\x02\x10\x01\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"!\n\x0e\x43reateResponse\x12\x0f\n\x07note_id\x18\x01 \x01(\x03\")\n\nGetRequest\x12\x1b\n\x07note_id\x18\x01 \x01(\x03\x42\n\xba\xe9\xc0\x03\x05\"\x03 \xe7\x07\"\xd2\x01\n\x0bGetResponse\x12\x0f\n\x07note_id\x18\x01 \x01(\x03\x12!\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyType\x12\x12\n\ncreated_by\x18\x03 \x01(\x03\x12\r\n\x05title\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xd2\x01\n\x0bNoteMessage\x12\x0f\n\x07note_id\x18\x01 \x01(\x03\x12!\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyType\x12\x12\n\ncreated_by\x18\x03 \x01(\x03\x12\r\n\x05title\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"9\n\x0bListRequest\x12\x0e\n\x06offset\x18\x01 \x01(\x03\x12\x1a\n\x05limit\x18\x02 \x01(\x03\x42\x0b\xba\xe9\xc0\x03\x06\"\x04\x18\x32(\x00\"0\n\x0cListResponse\x12 \n\x05notes\x18\x01 \x03(\x0b\x32\x11.note.NoteMessage\"\x90\x01\n\rUpdateRequest\x12\x0f\n\x07note_id\x18\x01 \x01(\x03\x12!\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyType\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x10\n\x0eUpdateResponse\" \n\rDeleteRequest\x12\x0f\n\x07note_id\x18\x01 \x01(\x03\"\x10\n\x0e\x44\x65leteResponse*,\n\x08\x42odyType\x12\x08\n\x04TEXT\x10\x00\x12\x08\n\x04HTML\x10\x01\x12\x0c\n\x08MARKDOWN\x10\x02\x32\x8a\x02\n\x04Note\x12\x35\n\x06\x43reate\x12\x13.note.CreateRequest\x1a\x14.note.CreateResponse\"\x00\x12,\n\x03Get\x12\x10.note.GetRequest\x1a\x11.note.GetResponse\"\x00\x12/\n\x04List\x12\x11.note.ListRequest\x1a\x12.note.ListResponse\"\x00\x12\x35\n\x06Update\x12\x13.note.UpdateRequest\x1a\x14.note.UpdateResponse\"\x00\x12\x35\n\x06\x44\x65lete\x12\x13.note.DeleteRequest\x1a\x14.note.DeleteResponse\"\x00\x42%Z#github.com/taeho-io/idl/gen/go/noteb\x06proto3')
+  serialized_pb=_b('\n\x0fnote/note.proto\x12\x04note\x1a\x1fgoogle/protobuf/timestamp.proto\x1a;github.com/lyft/protoc-gen-validate/validate/validate.proto\"\xbc\x02\n\rCreateRequest\x12_\n\x07note_id\x18\x01 \x01(\tBN\xba\xe9\xc0\x03IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\x12\x1e\n\ncreated_by\x18\x02 \x01(\x03\x42\n\xba\xe9\xc0\x03\x05\"\x03 \xe7\x07\x12-\n\tbody_type\x18\x03 \x01(\x0e\x32\x0e.note.BodyTypeB\n\xba\xe9\xc0\x03\x05\x82\x01\x02\x10\x01\x12\r\n\x05title\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x10\n\x0e\x43reateResponse\"\x1d\n\nGetRequest\x12\x0f\n\x07note_id\x18\x01 \x01(\t\"\xd2\x01\n\x0bGetResponse\x12\x0f\n\x07note_id\x18\x01 \x01(\t\x12!\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyType\x12\x12\n\ncreated_by\x18\x03 \x01(\x03\x12\r\n\x05title\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xd2\x01\n\x0bNoteMessage\x12\x0f\n\x07note_id\x18\x01 \x01(\t\x12!\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyType\x12\x12\n\ncreated_by\x18\x03 \x01(\x03\x12\r\n\x05title\x18\x04 \x01(\t\x12\x0c\n\x04\x62ody\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"9\n\x0bListRequest\x12\x0e\n\x06offset\x18\x01 \x01(\x03\x12\x1a\n\x05limit\x18\x02 \x01(\x03\x42\x0b\xba\xe9\xc0\x03\x06\"\x04\x18\x32(\x00\"0\n\x0cListResponse\x12 \n\x05notes\x18\x01 \x03(\x0b\x32\x11.note.NoteMessage\"\xe0\x01\n\rUpdateRequest\x12_\n\x07note_id\x18\x01 \x01(\tBN\xba\xe9\xc0\x03IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\x12!\n\tbody_type\x18\x02 \x01(\x0e\x32\x0e.note.BodyType\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12.\n\nupdated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x10\n\x0eUpdateResponse\"p\n\rDeleteRequest\x12_\n\x07note_id\x18\x01 \x01(\tBN\xba\xe9\xc0\x03IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"\x10\n\x0e\x44\x65leteResponse*,\n\x08\x42odyType\x12\x08\n\x04TEXT\x10\x00\x12\x08\n\x04HTML\x10\x01\x12\x0c\n\x08MARKDOWN\x10\x02\x32\x8a\x02\n\x04Note\x12\x35\n\x06\x43reate\x12\x13.note.CreateRequest\x1a\x14.note.CreateResponse\"\x00\x12,\n\x03Get\x12\x10.note.GetRequest\x1a\x11.note.GetResponse\"\x00\x12/\n\x04List\x12\x11.note.ListRequest\x1a\x12.note.ListResponse\"\x00\x12\x35\n\x06Update\x12\x13.note.UpdateRequest\x1a\x14.note.UpdateResponse\"\x00\x12\x35\n\x06\x44\x65lete\x12\x13.note.DeleteRequest\x1a\x14.note.DeleteResponse\"\x00\x42%Z#github.com/taeho-io/idl/gen/go/noteb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,github_dot_com_dot_lyft_dot_protoc__gen__validate_dot_validate_dot_validate__pb2.DESCRIPTOR,])
 
@@ -47,8 +47,8 @@ _BODYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1171,
-  serialized_end=1215,
+  serialized_start=1399,
+  serialized_end=1443,
 )
 _sym_db.RegisterEnumDescriptor(_BODYTYPE)
 
@@ -67,43 +67,50 @@ _CREATEREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='created_by', full_name='note.CreateRequest.created_by', index=0,
-      number=1, type=3, cpp_type=2, label=1,
+      name='note_id', full_name='note.CreateRequest.note_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$')), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created_by', full_name='note.CreateRequest.created_by', index=1,
+      number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\005\"\003 \347\007')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='body_type', full_name='note.CreateRequest.body_type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
+      name='body_type', full_name='note.CreateRequest.body_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\005\202\001\002\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='title', full_name='note.CreateRequest.title', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='body', full_name='note.CreateRequest.body', index=3,
+      name='title', full_name='note.CreateRequest.title', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='created_at', full_name='note.CreateRequest.created_at', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='body', full_name='note.CreateRequest.body', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='note.CreateRequest.created_at', index=5,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='updated_at', full_name='note.CreateRequest.updated_at', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='updated_at', full_name='note.CreateRequest.updated_at', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -121,7 +128,7 @@ _CREATEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=120,
-  serialized_end=339,
+  serialized_end=436,
 )
 
 
@@ -132,10 +139,34 @@ _CREATERESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=438,
+  serialized_end=454,
+)
+
+
+_GETREQUEST = _descriptor.Descriptor(
+  name='GetRequest',
+  full_name='note.GetRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
     _descriptor.FieldDescriptor(
-      name='note_id', full_name='note.CreateResponse.note_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='note_id', full_name='note.GetRequest.note_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -151,39 +182,8 @@ _CREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=341,
-  serialized_end=374,
-)
-
-
-_GETREQUEST = _descriptor.Descriptor(
-  name='GetRequest',
-  full_name='note.GetRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='note_id', full_name='note.GetRequest.note_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\005\"\003 \347\007')), file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=376,
-  serialized_end=417,
+  serialized_start=456,
+  serialized_end=485,
 )
 
 
@@ -196,8 +196,8 @@ _GETRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='note_id', full_name='note.GetResponse.note_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -255,8 +255,8 @@ _GETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=420,
-  serialized_end=630,
+  serialized_start=488,
+  serialized_end=698,
 )
 
 
@@ -269,8 +269,8 @@ _NOTEMESSAGE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='note_id', full_name='note.NoteMessage.note_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
@@ -328,8 +328,8 @@ _NOTEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=633,
-  serialized_end=843,
+  serialized_start=701,
+  serialized_end=911,
 )
 
 
@@ -366,8 +366,8 @@ _LISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=845,
-  serialized_end=902,
+  serialized_start=913,
+  serialized_end=970,
 )
 
 
@@ -397,8 +397,8 @@ _LISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=904,
-  serialized_end=952,
+  serialized_start=972,
+  serialized_end=1020,
 )
 
 
@@ -411,11 +411,11 @@ _UPDATEREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='note_id', full_name='note.UpdateRequest.note_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='body_type', full_name='note.UpdateRequest.body_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
@@ -456,8 +456,8 @@ _UPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
-  serialized_end=1099,
+  serialized_start=1023,
+  serialized_end=1247,
 )
 
 
@@ -480,8 +480,8 @@ _UPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1101,
-  serialized_end=1117,
+  serialized_start=1249,
+  serialized_end=1265,
 )
 
 
@@ -494,11 +494,11 @@ _DELETEREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='note_id', full_name='note.DeleteRequest.note_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -511,8 +511,8 @@ _DELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1119,
-  serialized_end=1151,
+  serialized_start=1267,
+  serialized_end=1379,
 )
 
 
@@ -535,8 +535,8 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1153,
-  serialized_end=1169,
+  serialized_start=1381,
+  serialized_end=1397,
 )
 
 _CREATEREQUEST.fields_by_name['body_type'].enum_type = _BODYTYPE
@@ -645,14 +645,18 @@ _sym_db.RegisterMessage(DeleteResponse)
 
 DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z#github.com/taeho-io/idl/gen/go/note'))
+_CREATEREQUEST.fields_by_name['note_id'].has_options = True
+_CREATEREQUEST.fields_by_name['note_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'))
 _CREATEREQUEST.fields_by_name['created_by'].has_options = True
 _CREATEREQUEST.fields_by_name['created_by']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\005\"\003 \347\007'))
 _CREATEREQUEST.fields_by_name['body_type'].has_options = True
 _CREATEREQUEST.fields_by_name['body_type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\005\202\001\002\020\001'))
-_GETREQUEST.fields_by_name['note_id'].has_options = True
-_GETREQUEST.fields_by_name['note_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\005\"\003 \347\007'))
 _LISTREQUEST.fields_by_name['limit'].has_options = True
 _LISTREQUEST.fields_by_name['limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003\006\"\004\0302(\000'))
+_UPDATEREQUEST.fields_by_name['note_id'].has_options = True
+_UPDATEREQUEST.fields_by_name['note_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'))
+_DELETEREQUEST.fields_by_name['note_id'].has_options = True
+_DELETEREQUEST.fields_by_name['note_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\272\351\300\003IrG2E^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$'))
 
 _NOTE = _descriptor.ServiceDescriptor(
   name='Note',
@@ -660,8 +664,8 @@ _NOTE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=1218,
-  serialized_end=1484,
+  serialized_start=1446,
+  serialized_end=1712,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

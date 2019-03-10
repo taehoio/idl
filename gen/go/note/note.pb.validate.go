@@ -41,6 +41,13 @@ func (m *CreateRequest) Validate() error {
 		return nil
 	}
 
+	if !_CreateRequest_NoteId_Pattern.MatchString(m.GetNoteId()) {
+		return CreateRequestValidationError{
+			field:  "NoteId",
+			reason: "value does not match regex pattern \"^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"",
+		}
+	}
+
 	if m.GetCreatedBy() <= 999 {
 		return CreateRequestValidationError{
 			field:  "CreatedBy",
@@ -136,6 +143,8 @@ var _ interface {
 	ErrorName() string
 } = CreateRequestValidationError{}
 
+var _CreateRequest_NoteId_Pattern = regexp.MustCompile("^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$")
+
 // Validate checks the field values on CreateResponse with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -143,8 +152,6 @@ func (m *CreateResponse) Validate() error {
 	if m == nil {
 		return nil
 	}
-
-	// no validation rules for NoteId
 
 	return nil
 }
@@ -210,12 +217,7 @@ func (m *GetRequest) Validate() error {
 		return nil
 	}
 
-	if m.GetNoteId() <= 999 {
-		return GetRequestValidationError{
-			field:  "NoteId",
-			reason: "value must be greater than 999",
-		}
-	}
+	// no validation rules for NoteId
 
 	return nil
 }
@@ -626,7 +628,12 @@ func (m *UpdateRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for NoteId
+	if !_UpdateRequest_NoteId_Pattern.MatchString(m.GetNoteId()) {
+		return UpdateRequestValidationError{
+			field:  "NoteId",
+			reason: "value does not match regex pattern \"^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"",
+		}
+	}
 
 	// no validation rules for BodyType
 
@@ -701,6 +708,8 @@ var _ interface {
 	ErrorName() string
 } = UpdateRequestValidationError{}
 
+var _UpdateRequest_NoteId_Pattern = regexp.MustCompile("^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$")
+
 // Validate checks the field values on UpdateResponse with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
 // is returned.
@@ -774,7 +783,12 @@ func (m *DeleteRequest) Validate() error {
 		return nil
 	}
 
-	// no validation rules for NoteId
+	if !_DeleteRequest_NoteId_Pattern.MatchString(m.GetNoteId()) {
+		return DeleteRequestValidationError{
+			field:  "NoteId",
+			reason: "value does not match regex pattern \"^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$\"",
+		}
+	}
 
 	return nil
 }
@@ -832,6 +846,8 @@ var _ interface {
 	Cause() error
 	ErrorName() string
 } = DeleteRequestValidationError{}
+
+var _DeleteRequest_NoteId_Pattern = regexp.MustCompile("^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-[0-9A-F]{12}$")
 
 // Validate checks the field values on DeleteResponse with the rules defined in
 // the proto definition for this message. If any rules are violated, an error
