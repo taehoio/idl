@@ -13,14 +13,16 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='slasher/slasher.proto',
   package='slasher',
   syntax='proto3',
-  serialized_pb=_b('\n\x15slasher/slasher.proto\x12\x07slasher\"\x1c\n\x0cSlashRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\"%\n\rSlashResponse\x12\x14\n\x0cslashed_text\x18\x01 \x01(\t2C\n\x07Slasher\x12\x38\n\x05Slash\x12\x15.slasher.SlashRequest\x1a\x16.slasher.SlashResponse\"\x00\x42(Z&github.com/taeho-io/idl/gen/go/slasherb\x06proto3')
-)
+  serialized_pb=_b('\n\x15slasher/slasher.proto\x12\x07slasher\x1a\x1cgoogle/api/annotations.proto\"\x1c\n\x0cSlashRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\"%\n\rSlashResponse\x12\x14\n\x0cslashed_text\x18\x01 \x01(\t2Q\n\x07Slasher\x12\x46\n\x05Slash\x12\x15.slasher.SlashRequest\x1a\x16.slasher.SlashResponse\"\x0e\x82\xd3\xe4\x93\x02\x08\x12\x06/slashB(Z&github.com/taeho-io/idl/gen/go/slasherb\x06proto3')
+  ,
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -51,8 +53,8 @@ _SLASHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=34,
-  serialized_end=62,
+  serialized_start=64,
+  serialized_end=92,
 )
 
 
@@ -82,8 +84,8 @@ _SLASHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=64,
-  serialized_end=101,
+  serialized_start=94,
+  serialized_end=131,
 )
 
 DESCRIPTOR.message_types_by_name['SlashRequest'] = _SLASHREQUEST
@@ -114,8 +116,8 @@ _SLASHER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=103,
-  serialized_end=170,
+  serialized_start=133,
+  serialized_end=214,
   methods=[
   _descriptor.MethodDescriptor(
     name='Slash',
@@ -124,7 +126,7 @@ _SLASHER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_SLASHREQUEST,
     output_type=_SLASHRESPONSE,
-    options=None,
+    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\010\022\006/slash')),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SLASHER)

@@ -4,8 +4,14 @@ package slasher;
 
 option go_package = "github.com/taeho-io/idl/gen/go/slasher";
 
+import "google/api/annotations.proto";
+
 service Slasher {
-    rpc Slash (SlashRequest) returns (SlashResponse) {}
+    rpc Slash (SlashRequest) returns (SlashResponse) {
+        option (google.api.http) = {
+            get: "/slash"
+        };
+    }
 }
 
 message SlashRequest {
