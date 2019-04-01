@@ -6,6 +6,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Lint
+          command: |
+            make lint
+      - run:
           name: Generate
           command: |
             make clean
