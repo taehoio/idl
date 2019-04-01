@@ -169,7 +169,7 @@ struct Auth_ParseResponse {
   init() {}
 }
 
-struct Auth_JWK {
+struct Auth_Jwk {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -200,7 +200,7 @@ struct Auth_JwksResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var keys: [Auth_JWK] = []
+  var keys: [Auth_Jwk] = []
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -492,8 +492,8 @@ extension Auth_ParseResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension Auth_JWK: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".JWK"
+extension Auth_Jwk: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  static let protoMessageName: String = _protobuf_package + ".Jwk"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "kty"),
     2: .same(proto: "e"),
@@ -524,7 +524,7 @@ extension Auth_JWK: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationB
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Auth_JWK, rhs: Auth_JWK) -> Bool {
+  static func ==(lhs: Auth_Jwk, rhs: Auth_Jwk) -> Bool {
     if lhs.kty != rhs.kty {return false}
     if lhs.e != rhs.e {return false}
     if lhs.n != rhs.n {return false}

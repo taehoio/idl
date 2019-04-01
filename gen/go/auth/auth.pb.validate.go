@@ -603,9 +603,9 @@ var _ interface {
 	ErrorName() string
 } = ParseResponseValidationError{}
 
-// Validate checks the field values on JWK with the rules defined in the proto
+// Validate checks the field values on Jwk with the rules defined in the proto
 // definition for this message. If any rules are violated, an error is returned.
-func (m *JWK) Validate() error {
+func (m *Jwk) Validate() error {
 	if m == nil {
 		return nil
 	}
@@ -619,9 +619,9 @@ func (m *JWK) Validate() error {
 	return nil
 }
 
-// JWKValidationError is the validation error returned by JWK.Validate if the
+// JwkValidationError is the validation error returned by Jwk.Validate if the
 // designated constraints aren't met.
-type JWKValidationError struct {
+type JwkValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -629,22 +629,22 @@ type JWKValidationError struct {
 }
 
 // Field function returns field value.
-func (e JWKValidationError) Field() string { return e.field }
+func (e JwkValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e JWKValidationError) Reason() string { return e.reason }
+func (e JwkValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e JWKValidationError) Cause() error { return e.cause }
+func (e JwkValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e JWKValidationError) Key() bool { return e.key }
+func (e JwkValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e JWKValidationError) ErrorName() string { return "JWKValidationError" }
+func (e JwkValidationError) ErrorName() string { return "JwkValidationError" }
 
 // Error satisfies the builtin error interface
-func (e JWKValidationError) Error() string {
+func (e JwkValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -656,14 +656,14 @@ func (e JWKValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sJWK.%s: %s%s",
+		"invalid %sJwk.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = JWKValidationError{}
+var _ error = JwkValidationError{}
 
 var _ interface {
 	Field() string
@@ -671,7 +671,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = JWKValidationError{}
+} = JwkValidationError{}
 
 // Validate checks the field values on JwksRequest with the rules defined in
 // the proto definition for this message. If any rules are violated, an error

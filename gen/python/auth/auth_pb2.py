@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='auth/auth.proto',
   package='auth',
   syntax='proto3',
-  serialized_pb=_b('\n\x0f\x61uth/auth.proto\x12\x04\x61uth\x1a\x1cgoogle/api/annotations.proto\x1a;github.com/lyft/protoc-gen-validate/validate/validate.proto\"*\n\x0b\x41uthRequest\x12\x1b\n\x07user_id\x18\x01 \x01(\x03\x42\n\xba\xe9\xc0\x03\x05\"\x03 \xe7\x07\"`\n\x0c\x41uthResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\x03\x12\x0f\n\x07user_id\x18\x04 \x01(\x03\"0\n\rVerifyRequest\x12\x1f\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02\x10\x1e\"\"\n\x0eVerifyResponse\x12\x10\n\x08is_valid\x18\x01 \x01(\x08\"2\n\x0eRefreshRequest\x12 \n\rrefresh_token\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02\x10\x1e\"c\n\x0fRefreshResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\x03\x12\x0f\n\x07user_id\x18\x04 \x01(\x03\"/\n\x0cParseRequest\x12\x1f\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02\x10\x1e\"E\n\rParseResponse\x12\x0f\n\x07user_id\x18\x01 \x01(\x03\x12#\n\ntoken_type\x18\x02 \x01(\x0e\x32\x0f.auth.TokenType\"(\n\x03JWK\x12\x0b\n\x03kty\x18\x01 \x01(\t\x12\t\n\x01\x65\x18\x02 \x01(\t\x12\t\n\x01n\x18\x03 \x01(\t\"\r\n\x0bJwksRequest\"\'\n\x0cJwksResponse\x12\x17\n\x04keys\x18\x01 \x03(\x0b\x32\t.auth.JWK*0\n\tTokenType\x12\x10\n\x0c\x41\x43\x43\x45SS_TOKEN\x10\x00\x12\x11\n\rREFRESH_TOKEN\x10\x01\x32\x9a\x02\n\x04\x41uth\x12/\n\x04\x41uth\x12\x11.auth.AuthRequest\x1a\x12.auth.AuthResponse\"\x00\x12\x35\n\x06Verify\x12\x13.auth.VerifyRequest\x1a\x14.auth.VerifyResponse\"\x00\x12\x38\n\x07Refresh\x12\x14.auth.RefreshRequest\x1a\x15.auth.RefreshResponse\"\x00\x12\x32\n\x05Parse\x12\x12.auth.ParseRequest\x1a\x13.auth.ParseResponse\"\x00\x12<\n\x04Jwks\x12\x11.auth.JwksRequest\x1a\x12.auth.JwksResponse\"\r\x82\xd3\xe4\x93\x02\x07\x12\x05/jwksB%Z#github.com/taeho-io/idl/gen/go/authb\x06proto3')
+  serialized_pb=_b('\n\x0f\x61uth/auth.proto\x12\x04\x61uth\x1a\x1cgoogle/api/annotations.proto\x1a;github.com/lyft/protoc-gen-validate/validate/validate.proto\"*\n\x0b\x41uthRequest\x12\x1b\n\x07user_id\x18\x01 \x01(\x03\x42\n\xba\xe9\xc0\x03\x05\"\x03 \xe7\x07\"`\n\x0c\x41uthResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\x03\x12\x0f\n\x07user_id\x18\x04 \x01(\x03\"0\n\rVerifyRequest\x12\x1f\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02\x10\x1e\"\"\n\x0eVerifyResponse\x12\x10\n\x08is_valid\x18\x01 \x01(\x08\"2\n\x0eRefreshRequest\x12 \n\rrefresh_token\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02\x10\x1e\"c\n\x0fRefreshResponse\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\x12\x12\n\nexpires_in\x18\x03 \x01(\x03\x12\x0f\n\x07user_id\x18\x04 \x01(\x03\"/\n\x0cParseRequest\x12\x1f\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\tB\t\xba\xe9\xc0\x03\x04r\x02\x10\x1e\"E\n\rParseResponse\x12\x0f\n\x07user_id\x18\x01 \x01(\x03\x12#\n\ntoken_type\x18\x02 \x01(\x0e\x32\x0f.auth.TokenType\"(\n\x03Jwk\x12\x0b\n\x03kty\x18\x01 \x01(\t\x12\t\n\x01\x65\x18\x02 \x01(\t\x12\t\n\x01n\x18\x03 \x01(\t\"\r\n\x0bJwksRequest\"\'\n\x0cJwksResponse\x12\x17\n\x04keys\x18\x01 \x03(\x0b\x32\t.auth.Jwk*0\n\tTokenType\x12\x10\n\x0c\x41\x43\x43\x45SS_TOKEN\x10\x00\x12\x11\n\rREFRESH_TOKEN\x10\x01\x32\x9a\x02\n\x04\x41uth\x12/\n\x04\x41uth\x12\x11.auth.AuthRequest\x1a\x12.auth.AuthResponse\"\x00\x12\x35\n\x06Verify\x12\x13.auth.VerifyRequest\x1a\x14.auth.VerifyResponse\"\x00\x12\x38\n\x07Refresh\x12\x14.auth.RefreshRequest\x1a\x15.auth.RefreshResponse\"\x00\x12\x32\n\x05Parse\x12\x12.auth.ParseRequest\x1a\x13.auth.ParseResponse\"\x00\x12<\n\x04Jwks\x12\x11.auth.JwksRequest\x1a\x12.auth.JwksResponse\"\r\x82\xd3\xe4\x93\x02\x07\x12\x05/jwksB%Z#github.com/taeho-io/idl/gen/go/authb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_lyft_dot_protoc__gen__validate_dot_validate_dot_validate__pb2.DESCRIPTOR,])
 
@@ -352,28 +352,28 @@ _PARSERESPONSE = _descriptor.Descriptor(
 
 
 _JWK = _descriptor.Descriptor(
-  name='JWK',
-  full_name='auth.JWK',
+  name='Jwk',
+  full_name='auth.Jwk',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='kty', full_name='auth.JWK.kty', index=0,
+      name='kty', full_name='auth.Jwk.kty', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='e', full_name='auth.JWK.e', index=1,
+      name='e', full_name='auth.Jwk.e', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='n', full_name='auth.JWK.n', index=2,
+      name='n', full_name='auth.Jwk.n', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -460,7 +460,7 @@ DESCRIPTOR.message_types_by_name['RefreshRequest'] = _REFRESHREQUEST
 DESCRIPTOR.message_types_by_name['RefreshResponse'] = _REFRESHRESPONSE
 DESCRIPTOR.message_types_by_name['ParseRequest'] = _PARSEREQUEST
 DESCRIPTOR.message_types_by_name['ParseResponse'] = _PARSERESPONSE
-DESCRIPTOR.message_types_by_name['JWK'] = _JWK
+DESCRIPTOR.message_types_by_name['Jwk'] = _JWK
 DESCRIPTOR.message_types_by_name['JwksRequest'] = _JWKSREQUEST
 DESCRIPTOR.message_types_by_name['JwksResponse'] = _JWKSRESPONSE
 DESCRIPTOR.enum_types_by_name['TokenType'] = _TOKENTYPE
@@ -522,12 +522,12 @@ ParseResponse = _reflection.GeneratedProtocolMessageType('ParseResponse', (_mess
   ))
 _sym_db.RegisterMessage(ParseResponse)
 
-JWK = _reflection.GeneratedProtocolMessageType('JWK', (_message.Message,), dict(
+Jwk = _reflection.GeneratedProtocolMessageType('Jwk', (_message.Message,), dict(
   DESCRIPTOR = _JWK,
   __module__ = 'auth.auth_pb2'
-  # @@protoc_insertion_point(class_scope:auth.JWK)
+  # @@protoc_insertion_point(class_scope:auth.Jwk)
   ))
-_sym_db.RegisterMessage(JWK)
+_sym_db.RegisterMessage(Jwk)
 
 JwksRequest = _reflection.GeneratedProtocolMessageType('JwksRequest', (_message.Message,), dict(
   DESCRIPTOR = _JWKSREQUEST,

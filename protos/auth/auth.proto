@@ -63,7 +63,7 @@ message ParseResponse {
     TokenType token_type = 2;
 }
 
-message JWK {
+message Jwk {
     string kty = 1;
     string e = 2;
     string n = 3;
@@ -73,5 +73,5 @@ message JwksRequest {
 }
 
 message JwksResponse {
-    repeated JWK keys = 1;
+    repeated Jwk keys = 1;
 }
