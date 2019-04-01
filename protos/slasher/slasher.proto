@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package slasher;
+
+option go_package = "github.com/taeho-io/idl/gen/go/slasher";
+
+service Slasher {
+    rpc Slash (SlashRequest) returns (SlashResponse) {}
+}
+
+message SlashRequest {
+    string text = 1;
+}
+
+message SlashResponse {
+    string slashed_text = 1;
+}
