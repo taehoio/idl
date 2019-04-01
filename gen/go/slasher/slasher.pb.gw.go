@@ -83,7 +83,7 @@ func RegisterSlasherHandler(ctx context.Context, mux *runtime.ServeMux, conn *gr
 // "SlasherClient" to call the correct interceptors.
 func RegisterSlasherHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SlasherClient) error {
 
-	mux.Handle("GET", pattern_Slasher_Slash_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_Slasher_Slash_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)

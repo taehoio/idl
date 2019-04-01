@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='slasher/slasher.proto',
   package='slasher',
   syntax='proto3',
-  serialized_pb=_b('\n\x15slasher/slasher.proto\x12\x07slasher\x1a\x1cgoogle/api/annotations.proto\"\x1c\n\x0cSlashRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\"%\n\rSlashResponse\x12\x14\n\x0cslashed_text\x18\x01 \x01(\t2\\\n\x07Slasher\x12Q\n\x05Slash\x12\x15.slasher.SlashRequest\x1a\x16.slasher.SlashResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/slasher/slashB(Z&github.com/taeho-io/idl/gen/go/slasherb\x06proto3')
+  serialized_pb=_b('\n\x15slasher/slasher.proto\x12\x07slasher\x1a\x1cgoogle/api/annotations.proto\"\x1c\n\x0cSlashRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\"%\n\rSlashResponse\x12\x14\n\x0cslashed_text\x18\x01 \x01(\t2\\\n\x07Slasher\x12Q\n\x05Slash\x12\x15.slasher.SlashRequest\x1a\x16.slasher.SlashResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x11/v1/slasher/slashB(Z&github.com/taeho-io/idl/gen/go/slasherb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -126,7 +126,7 @@ _SLASHER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_SLASHREQUEST,
     output_type=_SLASHRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\023\022\021/v1/slasher/slash')),
+    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\023\"\021/v1/slasher/slash')),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SLASHER)

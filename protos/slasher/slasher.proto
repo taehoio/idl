@@ -9,7 +9,7 @@ import "google/api/annotations.proto";
 service Slasher {
     rpc Slash (SlashRequest) returns (SlashResponse) {
         option (google.api.http) = {
-            get: "/v1/slasher/slash"
+            post: "/v1/slasher/slash"
         };
     }
 }
