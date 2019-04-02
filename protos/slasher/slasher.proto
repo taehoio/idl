@@ -10,6 +10,7 @@ service Slasher {
     rpc Slash (SlashRequest) returns (SlashResponse) {
         option (google.api.http) = {
             post: "/v1/slasher/slash"
+            body: "*"
         };
     }
 }
