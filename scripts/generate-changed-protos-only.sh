@@ -2,8 +2,11 @@
 
 IDL_PATH=/go/src/github.com/banksalad/idl
 
-docker run --rm -i --name protoc -v "$(pwd)":$IDL_PATH -w $IDL_PATH --entrypoint /bin/sh thethingsindustries/protoc:3.1.26 -c '\
-  PROTOS=`find ./protos -name "*.proto"`; \
+docker run --rm -i --name protoc \
+  -v "$(pwd)":$IDL_PATH -w $IDL_PATH \
+  --env PROTOS="$(find $(git status --porcelain | sed s/^...// | sed 's/^/.\//') -name '*.proto')" \
+  --entrypoint /bin/sh thethingsindustries/protoc:3.1.26 -c '\
+  \
   IDL_PATH=/go/src/github.com/banksalad/idl; \
   \
   mkdir -p $IDL_PATH"/gen/python/"; \

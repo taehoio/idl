@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package v1.api;
+
+option go_package = "github.com/taehoio/idl/gen/go/apis/v1/api";
+option java_outer_classname = "ApiProto";
+option java_package = "com.github.taehoio.idl.apis.v1.api";
+
+
+import "google/api/annotations.proto";
+
+service Api {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
+    option (google.api.http) = {
+      get: "/health"
+    };
+  }
+  rpc  Hello(HelloRequest) returns (HelloResponse) {
+    option (google.api.http) = {
+      get: "/hello"
+    };
+  }
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string name = 1;
+}
