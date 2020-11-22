@@ -1,13 +1,13 @@
 #!/bin/bash
 
-IDL_PATH=/go/src/github.com/banksalad/idl
+IDL_PATH=/go/src/github.com/taehoio/idl
 
 docker run --rm -i --name protoc \
   -v "$(pwd)":$IDL_PATH -w $IDL_PATH \
   --env PROTOS="$(find $(git status --porcelain | sed s/^...// | sed 's/^/.\//') -name '*.proto')" \
   --entrypoint /bin/sh thethingsindustries/protoc:3.1.26 -c '\
   \
-  IDL_PATH=/go/src/github.com/banksalad/idl; \
+  IDL_PATH=/go/src/github.com/taehoio/idl; \
   \
   mkdir -p $IDL_PATH"/gen/python/"; \
   for FILE in ${PROTOS}; do \
