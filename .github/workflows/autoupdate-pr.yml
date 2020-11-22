@@ -2,11 +2,11 @@ name: autoupdate
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   autoupdate:
     name: autoupdate
-    runs-on: [self-hosted, default]
+    runs-on: ubuntu-20.04
     steps:
       - uses: docker://chinthakagodawita/autoupdate-action:v1
         env:
