@@ -1,0 +1,13 @@
+name: autoupdate
+on:
+  push:
+    branches:
+      - master
+jobs:
+  autoupdate:
+    name: autoupdate
+    runs-on: [self-hosted, default]
+    steps:
+      - uses: docker://chinthakagodawita/autoupdate-action:v1
+        env:
+          GITHUB_TOKEN: "${{ secrets.GH_ACCESS_TOKEN }}"
