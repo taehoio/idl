@@ -2,15 +2,6 @@
 
 IDL_PATH=/go/src/github.com/taehoio/idl
 
-docker run --rm -i --name protoc -v "$(pwd)":$IDL_PATH -w $IDL_PATH --entrypoint /bin/sh thethingsindustries/protoc:3.1.26 -c '\
-  PROTOS=`find ./protos -name "*.proto"`; \
-  IDL_PATH=/go/src/github.com/taehoio/idl; \
-  \
-  for FILE in ${PROTOS}; do \
-    protoc \
-      -I$IDL_PATH/protos \
-      -I/go/src \
-      --lint_out=/go/src \
-      $IDL_PATH${FILE#.}; \
-  done \
+docker run --rm -i --name protobuf -v "$(pwd)":$IDL_PATH -w $IDL_PATH --entrypoint /bin/sh taehoio/protobuf:ff6526f768ccabbc821ac3fa52130dba40fcf513 -c '\
+  buf lint --path services \
 '
