@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IDL_PATH=/go/src/github.com/taehoio/idl
-PROTOBUF_COMMIT_SHA=e5baa4cc342f2e90f7ed531de4a59607e80d8e6d
+PROTOBUF_COMMIT_SHA=4d23684d195e64eb49925a8aeb2f2c6e319c6109
 
 docker run --rm -i --name protobuf -v "$(pwd)":$IDL_PATH -w $IDL_PATH --entrypoint /bin/sh taehoio/protobuf:$PROTOBUF_COMMIT_SHA -c '\
   buf generate \
