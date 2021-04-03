@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/baemincrypto/v1": {
+    "/baemincrypto/v1/health": {
       "get": {
         "operationId": "BaemincryptoService_HealthCheck",
         "responses": {

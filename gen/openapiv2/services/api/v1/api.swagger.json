@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1": {
+    "/v1/health": {
       "get": {
         "operationId": "ApiService_HealthCheck",
         "responses": {
