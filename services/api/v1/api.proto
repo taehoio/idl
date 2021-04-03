@@ -12,12 +12,12 @@ import "google/api/annotations.proto";
 service ApiService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
     option (google.api.http) = {
-      get: "/health"
+      get: "/v1"
     };
   }
   rpc Hello(HelloRequest) returns (HelloResponse) {
     option (google.api.http) = {
-      get: "/hello"
+      get: "/v1/hello"
     };
   }
 }

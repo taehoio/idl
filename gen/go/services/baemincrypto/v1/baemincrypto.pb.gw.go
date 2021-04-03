@@ -297,7 +297,7 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 }
 
 var (
-	pattern_BaemincryptoService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"health"}, ""))
+	pattern_BaemincryptoService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"baemincrypto", "v1"}, ""))
 
 	pattern_BaemincryptoService_EncryptUserBaedalHeaderValue_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"baemincrypto", "v1", "user-baedal-header", "encrypt"}, ""))
 
