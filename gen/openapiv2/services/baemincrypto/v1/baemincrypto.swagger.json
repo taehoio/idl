@@ -16,29 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/baemincrypto/v1/health": {
-      "get": {
-        "operationId": "BaemincryptoService_HealthCheck",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1HealthCheckResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "tags": [
-          "BaemincryptoService"
-        ]
-      }
-    },
-    "/baemincrypto/v1/user-baedal-header/decrypt": {
+    "/baemincrypto/v1/decrypt-user-baedal-header": {
       "post": {
         "operationId": "BaemincryptoService_DecryptUserBaedalHeaderValue",
         "responses": {
@@ -70,7 +48,7 @@
         ]
       }
     },
-    "/baemincrypto/v1/user-baedal-header/encrypt": {
+    "/baemincrypto/v1/encrypt-user-baedal-header": {
       "post": {
         "operationId": "BaemincryptoService_EncryptUserBaedalHeaderValue",
         "responses": {
@@ -97,6 +75,28 @@
             }
           }
         ],
+        "tags": [
+          "BaemincryptoService"
+        ]
+      }
+    },
+    "/baemincrypto/v1/health": {
+      "get": {
+        "operationId": "BaemincryptoService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1HealthCheckResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
         "tags": [
           "BaemincryptoService"
         ]
