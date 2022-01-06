@@ -129,7 +129,7 @@ func RegisterBaemincryptoServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/HealthCheck")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/HealthCheck", runtime.WithHTTPPathPattern("/baemincrypto/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -152,7 +152,7 @@ func RegisterBaemincryptoServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/encrypt"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -175,7 +175,7 @@ func RegisterBaemincryptoServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue")
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/decrypt"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -237,7 +237,7 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/HealthCheck")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/HealthCheck", runtime.WithHTTPPathPattern("/baemincrypto/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -257,7 +257,7 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/encrypt"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -277,7 +277,7 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue")
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/decrypt"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
