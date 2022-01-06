@@ -152,7 +152,7 @@ func RegisterBaemincryptoServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/encrypt"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/encrypt-user-baedal-header"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -175,7 +175,7 @@ func RegisterBaemincryptoServiceHandlerServer(ctx context.Context, mux *runtime.
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/decrypt"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/decrypt-user-baedal-header"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -257,7 +257,7 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/encrypt"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/EncryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/encrypt-user-baedal-header"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -277,7 +277,7 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/user-baedal-header/decrypt"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.baemincrypto.v1.BaemincryptoService/DecryptUserBaedalHeaderValue", runtime.WithHTTPPathPattern("/baemincrypto/v1/decrypt-user-baedal-header"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -299,9 +299,9 @@ func RegisterBaemincryptoServiceHandlerClient(ctx context.Context, mux *runtime.
 var (
 	pattern_BaemincryptoService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"baemincrypto", "v1", "health"}, ""))
 
-	pattern_BaemincryptoService_EncryptUserBaedalHeaderValue_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"baemincrypto", "v1", "user-baedal-header", "encrypt"}, ""))
+	pattern_BaemincryptoService_EncryptUserBaedalHeaderValue_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"baemincrypto", "v1", "encrypt-user-baedal-header"}, ""))
 
-	pattern_BaemincryptoService_DecryptUserBaedalHeaderValue_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"baemincrypto", "v1", "user-baedal-header", "decrypt"}, ""))
+	pattern_BaemincryptoService_DecryptUserBaedalHeaderValue_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"baemincrypto", "v1", "decrypt-user-baedal-header"}, ""))
 )
 
 var (

@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package services.auth.v1;
+
+option go_package = "github.com/taehoio/idl/gen/go/services/auth/v1;authv1";
+option java_multiple_files = true;
+option java_outer_classname = "AuthProto";
+option java_package = "com.github.taehoio.idl.services.auth.v1";
+
+import "google/api/annotations.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+
+service AuthService {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
+    option (google.api.http) = {
+      get: "/baemincrypto/v1/health"
+    };
+  }
+  rpc Auth(AuthRequest) returns (AuthResponse) {
+    option (google.api.http) = {
+      post: "/auth/v1/auth"
+      body: "*"
+    };
+  }
+  rpc AuthByRefreshToken(AuthByRefreshTokenRequest) returns (AuthByRefreshTokenResponse) {
+    option (google.api.http) = {
+      post: "/auth/v1/auth-by-refresh-token"
+      body: "*"
+    };
+  }
+  rpc VerifyToken(VerifyTokenRequest) returns (VerifyTokenResponse) {
+    option (google.api.http) = {
+      post: "/auth/v1/verify-token"
+      body: "*"
+    };
+  }
+  rpc ParseToken(ParseTokenRequest) returns (ParseTokenResponse) {
+    option (google.api.http) = {
+      post: "/auth/v1/parse-token"
+      body: "*"
+    };
+  }
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
+enum TokenType {
+  TOKEN_TYPE_UNSPECIFIED = 0;
+  TOKEN_TYPE_ACCESS = 1;
+  TOKEN_TYPE_REFRESH = 2;
+}
+
+message AuthRequest {
+  string identifier = 1;
+}
+
+message AuthResponse {
+  string access_token = 1;
+  google.protobuf.Duration access_token_expires_in = 2;
+  google.protobuf.Timestamp access_token_expires_at = 3;
+  string refresh_token = 4;
+  google.protobuf.Duration refresh_token_expires_in = 5;
+  google.protobuf.Timestamp refresh_token_expires_at = 6;
+}
+
+message AuthByRefreshTokenRequest {
+  string refresh_token = 1;
+}
+
+message AuthByRefreshTokenResponse {
+  string access_token = 1;
+  google.protobuf.Duration access_token_expires_in = 2;
+  google.protobuf.Timestamp access_token_expires_at = 3;
+  string refresh_token = 4;
+  google.protobuf.Duration refresh_token_expires_in = 5;
+  google.protobuf.Timestamp refresh_token_expires_at = 6;
+}
+
+message VerifyTokenRequest {
+  string token = 1;
+}
+
+message VerifyTokenResponse {
+  TokenType token_type = 1;
+  bool is_valid = 2;
+}
+
+message ParseTokenRequest {
+  string token = 1;
+}
+
+message ParseTokenResponse {
+  TokenType token_type = 1;
+  string identifier = 2;
+}

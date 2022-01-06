@@ -17,14 +17,14 @@ service BaemincryptoService {
   }
   rpc EncryptUserBaedalHeaderValue(EncryptUserBaedalHeaderValueRequest) returns (EncryptUserBaedalHeaderValueResponse) {
       option (google.api.http) = {
-          post: "/baemincrypto/v1/user-baedal-header/encrypt"
-          body: "*"
+        post: "/baemincrypto/v1/encrypt-user-baedal-header"
+        body: "*"
       };
   }
   rpc DecryptUserBaedalHeaderValue(DecryptUserBaedalHeaderValueRequest) returns (DecryptUserBaedalHeaderValueResponse) {
       option (google.api.http) = {
-          post: "/baemincrypto/v1/user-baedal-header/decrypt"
-          body: "*"
+        post: "/baemincrypto/v1/decrypt-user-baedal-header"
+        body: "*"
       };
   }
 }
