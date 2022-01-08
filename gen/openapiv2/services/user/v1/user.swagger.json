@@ -38,7 +38,7 @@
         ]
       }
     },
-    "/user/v1/signin": {
+    "/user/v1/sign-in": {
       "post": {
         "operationId": "UserService_SignIn",
         "responses": {
@@ -70,7 +70,7 @@
         ]
       }
     },
-    "/user/v1/signup": {
+    "/user/v1/sign-up": {
       "post": {
         "operationId": "UserService_SignUp",
         "responses": {
