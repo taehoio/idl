@@ -1,0 +1,170 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "taehoio/idl/services/baemincrypto/v1/baemincrypto.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "BaemincryptoService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/baemincrypto/v1/decrypt-user-baedal-header": {
+      "post": {
+        "operationId": "BaemincryptoService_DecryptUserBaedalHeaderValue",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DecryptUserBaedalHeaderValueResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1DecryptUserBaedalHeaderValueRequest"
+            }
+          }
+        ],
+        "tags": [
+          "BaemincryptoService"
+        ]
+      }
+    },
+    "/baemincrypto/v1/encrypt-user-baedal-header": {
+      "post": {
+        "operationId": "BaemincryptoService_EncryptUserBaedalHeaderValue",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1EncryptUserBaedalHeaderValueResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1EncryptUserBaedalHeaderValueRequest"
+            }
+          }
+        ],
+        "tags": [
+          "BaemincryptoService"
+        ]
+      }
+    },
+    "/baemincrypto/v1/health": {
+      "get": {
+        "operationId": "BaemincryptoService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1HealthCheckResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "BaemincryptoService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1DecryptUserBaedalHeaderValueRequest": {
+      "type": "object",
+      "properties": {
+        "encryptedText": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DecryptUserBaedalHeaderValueResponse": {
+      "type": "object",
+      "properties": {
+        "decryptedText": {
+          "type": "string"
+        }
+      }
+    },
+    "v1EncryptUserBaedalHeaderValueRequest": {
+      "type": "object",
+      "properties": {
+        "inputText": {
+          "type": "string"
+        }
+      }
+    },
+    "v1EncryptUserBaedalHeaderValueResponse": {
+      "type": "object",
+      "properties": {
+        "encryptedText": {
+          "type": "string"
+        }
+      }
+    },
+    "v1HealthCheckResponse": {
+      "type": "object"
+    }
+  }
+}
