@@ -11,16 +11,12 @@ import "google/api/annotations.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
+import "services/user/v1/user.proto";
+
 service AuthService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
     option (google.api.http) = {
       get: "/baemincrypto/v1/health"
-    };
-  }
-  rpc Auth(AuthRequest) returns (AuthResponse) {
-    option (google.api.http) = {
-      post: "/auth/v1/auth"
-      body: "*"
     };
   }
   rpc AuthByRefreshToken(AuthByRefreshTokenRequest) returns (AuthByRefreshTokenResponse) {
@@ -41,6 +37,7 @@ service AuthService {
       body: "*"
     };
   }
+  rpc Auth(AuthRequest) returns (AuthResponse) {}
 }
 
 message HealthCheckRequest {}
@@ -54,7 +51,8 @@ enum TokenType {
 }
 
 message AuthRequest {
-  string identifier = 1;
+  services.user.v1.Provider provider = 1;
+  string identifier = 2;
 }
 
 message AuthResponse {

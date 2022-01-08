@@ -18,13 +18,13 @@ service UserService {
   }
   rpc SignUp(SignUpRequest) returns (SignUpResponse) {
     option (google.api.http) = {
-      post: "/user/v1/signup"
+      post: "/user/v1/sign-up"
       body: "*"
     };
   }
   rpc SignIn(SignInRequest) returns (SignInResponse) {
     option (google.api.http) = {
-      post: "/user/v1/signin"
+      post: "/user/v1/sign-in"
       body: "*"
     };
   }

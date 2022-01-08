@@ -152,7 +152,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.user.v1.UserService/SignUp", runtime.WithHTTPPathPattern("/user/v1/signup"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.user.v1.UserService/SignUp", runtime.WithHTTPPathPattern("/user/v1/sign-up"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -175,7 +175,7 @@ func RegisterUserServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.user.v1.UserService/SignIn", runtime.WithHTTPPathPattern("/user/v1/signin"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/services.user.v1.UserService/SignIn", runtime.WithHTTPPathPattern("/user/v1/sign-in"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -257,7 +257,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.user.v1.UserService/SignUp", runtime.WithHTTPPathPattern("/user/v1/signup"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.user.v1.UserService/SignUp", runtime.WithHTTPPathPattern("/user/v1/sign-up"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -277,7 +277,7 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.user.v1.UserService/SignIn", runtime.WithHTTPPathPattern("/user/v1/signin"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/services.user.v1.UserService/SignIn", runtime.WithHTTPPathPattern("/user/v1/sign-in"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -299,9 +299,9 @@ func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 var (
 	pattern_UserService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "v1", "health"}, ""))
 
-	pattern_UserService_SignUp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "v1", "signup"}, ""))
+	pattern_UserService_SignUp_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "v1", "sign-up"}, ""))
 
-	pattern_UserService_SignIn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "v1", "signin"}, ""))
+	pattern_UserService_SignIn_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"user", "v1", "sign-in"}, ""))
 )
 
 var (

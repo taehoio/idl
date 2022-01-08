@@ -16,38 +16,6 @@
     "application/json"
   ],
   "paths": {
-    "/auth/v1/auth": {
-      "post": {
-        "operationId": "AuthService_Auth",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1AuthResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1AuthRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AuthService"
-        ]
-      }
-    },
     "/auth/v1/auth-by-refresh-token": {
       "post": {
         "operationId": "AuthService_AuthByRefreshToken",
@@ -151,7 +119,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1HealthCheckResponse"
+              "$ref": "#/definitions/servicesauthv1HealthCheckResponse"
             }
           },
           "default": {
@@ -195,6 +163,9 @@
         }
       }
     },
+    "servicesauthv1HealthCheckResponse": {
+      "type": "object"
+    },
     "v1AuthByRefreshTokenRequest": {
       "type": "object",
       "properties": {
@@ -228,14 +199,6 @@
         }
       }
     },
-    "v1AuthRequest": {
-      "type": "object",
-      "properties": {
-        "identifier": {
-          "type": "string"
-        }
-      }
-    },
     "v1AuthResponse": {
       "type": "object",
       "properties": {
@@ -261,9 +224,6 @@
         }
       }
     },
-    "v1HealthCheckResponse": {
-      "type": "object"
-    },
     "v1ParseTokenRequest": {
       "type": "object",
       "properties": {
@@ -282,6 +242,14 @@
           "type": "string"
         }
       }
+    },
+    "v1Provider": {
+      "type": "string",
+      "enum": [
+        "PROVIDER_UNSPECIFIED",
+        "PROVIDER_EMAIL"
+      ],
+      "default": "PROVIDER_UNSPECIFIED"
     },
     "v1TokenType": {
       "type": "string",
