@@ -9,7 +9,6 @@ install-dependencies:
 	@go install \
 		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.7.2 \
 		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.7.2
-	@go install github.com/taehoio/protoc-gen-go-ddl@28cdd3ddcfe0be5e50f70b5df4f0f765c2b7559e
 
 .PHONY: lint
 lint: install-dependencies
