@@ -9,7 +9,6 @@ option java_package = "com.github.taehoio.idl.services.auth.v1";
 
 import "google/api/annotations.proto";
 import "google/protobuf/duration.proto";
-import "google/protobuf/timestamp.proto";
 
 import "taehoio/idl/services/user/v1/user.proto";
 
