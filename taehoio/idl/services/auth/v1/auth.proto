@@ -29,14 +29,25 @@ service AuthService {
   rpc ParseToken(ParseTokenRequest) returns (ParseTokenResponse) {}
 }
 
-message HealthCheckRequest {}
-
-message HealthCheckResponse {}
-
 enum TokenType {
   TOKEN_TYPE_UNSPECIFIED = 0;
   TOKEN_TYPE_ACCESS = 1;
   TOKEN_TYPE_REFRESH = 2;
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
+message AuthByRefreshTokenRequest {
+  string refresh_token = 1;
+}
+
+message AuthByRefreshTokenResponse {
+  string access_token = 1;
+  google.protobuf.Duration access_token_expires_in = 2;
+  string refresh_token = 3;
+  google.protobuf.Duration refresh_token_expires_in = 4;
 }
 
 message AuthRequest {
@@ -45,17 +56,6 @@ message AuthRequest {
 }
 
 message AuthResponse {
-  string access_token = 1;
-  google.protobuf.Duration access_token_expires_in = 2;
-  string refresh_token = 3;
-  google.protobuf.Duration refresh_token_expires_in = 4;
-}
-
-message AuthByRefreshTokenRequest {
-  string refresh_token = 1;
-}
-
-message AuthByRefreshTokenResponse {
   string access_token = 1;
   google.protobuf.Duration access_token_expires_in = 2;
   string refresh_token = 3;

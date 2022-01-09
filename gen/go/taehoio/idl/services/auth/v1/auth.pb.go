@@ -149,6 +149,124 @@ func (*HealthCheckResponse) Descriptor() ([]byte, []int) {
 	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{1}
 }
 
+type AuthByRefreshTokenRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	RefreshToken string `protobuf:"bytes,1,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+}
+
+func (x *AuthByRefreshTokenRequest) Reset() {
+	*x = AuthByRefreshTokenRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AuthByRefreshTokenRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AuthByRefreshTokenRequest) ProtoMessage() {}
+
+func (x *AuthByRefreshTokenRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AuthByRefreshTokenRequest.ProtoReflect.Descriptor instead.
+func (*AuthByRefreshTokenRequest) Descriptor() ([]byte, []int) {
+	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *AuthByRefreshTokenRequest) GetRefreshToken() string {
+	if x != nil {
+		return x.RefreshToken
+	}
+	return ""
+}
+
+type AuthByRefreshTokenResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	AccessToken           string               `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	AccessTokenExpiresIn  *durationpb.Duration `protobuf:"bytes,2,opt,name=access_token_expires_in,json=accessTokenExpiresIn,proto3" json:"access_token_expires_in,omitempty"`
+	RefreshToken          string               `protobuf:"bytes,3,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	RefreshTokenExpiresIn *durationpb.Duration `protobuf:"bytes,4,opt,name=refresh_token_expires_in,json=refreshTokenExpiresIn,proto3" json:"refresh_token_expires_in,omitempty"`
+}
+
+func (x *AuthByRefreshTokenResponse) Reset() {
+	*x = AuthByRefreshTokenResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AuthByRefreshTokenResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AuthByRefreshTokenResponse) ProtoMessage() {}
+
+func (x *AuthByRefreshTokenResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AuthByRefreshTokenResponse.ProtoReflect.Descriptor instead.
+func (*AuthByRefreshTokenResponse) Descriptor() ([]byte, []int) {
+	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *AuthByRefreshTokenResponse) GetAccessToken() string {
+	if x != nil {
+		return x.AccessToken
+	}
+	return ""
+}
+
+func (x *AuthByRefreshTokenResponse) GetAccessTokenExpiresIn() *durationpb.Duration {
+	if x != nil {
+		return x.AccessTokenExpiresIn
+	}
+	return nil
+}
+
+func (x *AuthByRefreshTokenResponse) GetRefreshToken() string {
+	if x != nil {
+		return x.RefreshToken
+	}
+	return ""
+}
+
+func (x *AuthByRefreshTokenResponse) GetRefreshTokenExpiresIn() *durationpb.Duration {
+	if x != nil {
+		return x.RefreshTokenExpiresIn
+	}
+	return nil
+}
+
 type AuthRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -161,7 +279,7 @@ type AuthRequest struct {
 func (x *AuthRequest) Reset() {
 	*x = AuthRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[2]
+		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -174,7 +292,7 @@ func (x *AuthRequest) String() string {
 func (*AuthRequest) ProtoMessage() {}
 
 func (x *AuthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[2]
+	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -187,7 +305,7 @@ func (x *AuthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuthRequest.ProtoReflect.Descriptor instead.
 func (*AuthRequest) Descriptor() ([]byte, []int) {
-	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{2}
+	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AuthRequest) GetProvider() v1.Provider {
@@ -218,7 +336,7 @@ type AuthResponse struct {
 func (x *AuthResponse) Reset() {
 	*x = AuthResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[3]
+		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -231,7 +349,7 @@ func (x *AuthResponse) String() string {
 func (*AuthResponse) ProtoMessage() {}
 
 func (x *AuthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[3]
+	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -244,7 +362,7 @@ func (x *AuthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuthResponse.ProtoReflect.Descriptor instead.
 func (*AuthResponse) Descriptor() ([]byte, []int) {
-	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{3}
+	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AuthResponse) GetAccessToken() string {
@@ -269,124 +387,6 @@ func (x *AuthResponse) GetRefreshToken() string {
 }
 
 func (x *AuthResponse) GetRefreshTokenExpiresIn() *durationpb.Duration {
-	if x != nil {
-		return x.RefreshTokenExpiresIn
-	}
-	return nil
-}
-
-type AuthByRefreshTokenRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	RefreshToken string `protobuf:"bytes,1,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
-}
-
-func (x *AuthByRefreshTokenRequest) Reset() {
-	*x = AuthByRefreshTokenRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *AuthByRefreshTokenRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AuthByRefreshTokenRequest) ProtoMessage() {}
-
-func (x *AuthByRefreshTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AuthByRefreshTokenRequest.ProtoReflect.Descriptor instead.
-func (*AuthByRefreshTokenRequest) Descriptor() ([]byte, []int) {
-	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *AuthByRefreshTokenRequest) GetRefreshToken() string {
-	if x != nil {
-		return x.RefreshToken
-	}
-	return ""
-}
-
-type AuthByRefreshTokenResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	AccessToken           string               `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	AccessTokenExpiresIn  *durationpb.Duration `protobuf:"bytes,2,opt,name=access_token_expires_in,json=accessTokenExpiresIn,proto3" json:"access_token_expires_in,omitempty"`
-	RefreshToken          string               `protobuf:"bytes,3,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
-	RefreshTokenExpiresIn *durationpb.Duration `protobuf:"bytes,4,opt,name=refresh_token_expires_in,json=refreshTokenExpiresIn,proto3" json:"refresh_token_expires_in,omitempty"`
-}
-
-func (x *AuthByRefreshTokenResponse) Reset() {
-	*x = AuthByRefreshTokenResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *AuthByRefreshTokenResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*AuthByRefreshTokenResponse) ProtoMessage() {}
-
-func (x *AuthByRefreshTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use AuthByRefreshTokenResponse.ProtoReflect.Descriptor instead.
-func (*AuthByRefreshTokenResponse) Descriptor() ([]byte, []int) {
-	return file_taehoio_idl_services_auth_v1_auth_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *AuthByRefreshTokenResponse) GetAccessToken() string {
-	if x != nil {
-		return x.AccessToken
-	}
-	return ""
-}
-
-func (x *AuthByRefreshTokenResponse) GetAccessTokenExpiresIn() *durationpb.Duration {
-	if x != nil {
-		return x.AccessTokenExpiresIn
-	}
-	return nil
-}
-
-func (x *AuthByRefreshTokenResponse) GetRefreshToken() string {
-	if x != nil {
-		return x.RefreshToken
-	}
-	return ""
-}
-
-func (x *AuthByRefreshTokenResponse) GetRefreshTokenExpiresIn() *durationpb.Duration {
 	if x != nil {
 		return x.RefreshTokenExpiresIn
 	}
@@ -521,36 +521,36 @@ var file_taehoio_idl_services_auth_v1_auth_proto_rawDesc = []byte{
 	0x72, 0x2f, 0x76, 0x31, 0x2f, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22,
 	0x14, 0x0a, 0x12, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x22, 0x15, 0x0a, 0x13, 0x48, 0x65, 0x61, 0x6c, 0x74, 0x68, 0x43,
-	0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x71, 0x0a, 0x0b,
-	0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x08, 0x70,
-	0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x26, 0x2e,
-	0x74, 0x61, 0x65, 0x68, 0x6f, 0x69, 0x6f, 0x2e, 0x69, 0x64, 0x6c, 0x2e, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f,
-	0x76, 0x69, 0x64, 0x65, 0x72, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x12,
-	0x1e, 0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x22,
-	0xfc, 0x01, 0x0a, 0x0c, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f,
-	0x6b, 0x65, 0x6e, 0x12, 0x50, 0x0a, 0x17, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f,
-	0x6b, 0x65, 0x6e, 0x5f, 0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x5f, 0x69, 0x6e, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x44, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
-	0x14, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x45, 0x78, 0x70, 0x69,
-	0x72, 0x65, 0x73, 0x49, 0x6e, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68,
-	0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65,
-	0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x52, 0x0a, 0x18, 0x72, 0x65,
-	0x66, 0x72, 0x65, 0x73, 0x68, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5f, 0x65, 0x78, 0x70, 0x69,
-	0x72, 0x65, 0x73, 0x5f, 0x69, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x67,
-	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x44,
-	0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x15, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68,
-	0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x45, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x49, 0x6e, 0x22, 0x40,
-	0x0a, 0x19, 0x41, 0x75, 0x74, 0x68, 0x42, 0x79, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54,
-	0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x72,
-	0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e,
-	0x22, 0x8a, 0x02, 0x0a, 0x1a, 0x41, 0x75, 0x74, 0x68, 0x42, 0x79, 0x52, 0x65, 0x66, 0x72, 0x65,
-	0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x68, 0x65, 0x63, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x40, 0x0a, 0x19,
+	0x41, 0x75, 0x74, 0x68, 0x42, 0x79, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b,
+	0x65, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x66,
+	0x72, 0x65, 0x73, 0x68, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0c, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x8a,
+	0x02, 0x0a, 0x1a, 0x41, 0x75, 0x74, 0x68, 0x42, 0x79, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68,
+	0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x21, 0x0a,
+	0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e,
+	0x12, 0x50, 0x0a, 0x17, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
+	0x5f, 0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x5f, 0x69, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x19, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x44, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x14, 0x61, 0x63,
+	0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x45, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73,
+	0x49, 0x6e, 0x12, 0x23, 0x0a, 0x0d, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x5f, 0x74, 0x6f,
+	0x6b, 0x65, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x72, 0x65, 0x66, 0x72, 0x65,
+	0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x52, 0x0a, 0x18, 0x72, 0x65, 0x66, 0x72, 0x65,
+	0x73, 0x68, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x5f, 0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73,
+	0x5f, 0x69, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x44, 0x75, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x15, 0x72, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b,
+	0x65, 0x6e, 0x45, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x49, 0x6e, 0x22, 0x71, 0x0a, 0x0b, 0x41,
+	0x75, 0x74, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x42, 0x0a, 0x08, 0x70, 0x72,
+	0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x26, 0x2e, 0x74,
+	0x61, 0x65, 0x68, 0x6f, 0x69, 0x6f, 0x2e, 0x69, 0x64, 0x6c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x72, 0x6f, 0x76,
+	0x69, 0x64, 0x65, 0x72, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x12, 0x1e,
+	0x0a, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0a, 0x69, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x66, 0x69, 0x65, 0x72, 0x22, 0xfc,
+	0x01, 0x0a, 0x0c, 0x41, 0x75, 0x74, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x54, 0x6f, 0x6b,
 	0x65, 0x6e, 0x12, 0x50, 0x0a, 0x17, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x74, 0x6f, 0x6b,
@@ -649,30 +649,30 @@ var file_taehoio_idl_services_auth_v1_auth_proto_goTypes = []interface{}{
 	(TokenType)(0),                     // 0: taehoio.idl.services.auth.v1.TokenType
 	(*HealthCheckRequest)(nil),         // 1: taehoio.idl.services.auth.v1.HealthCheckRequest
 	(*HealthCheckResponse)(nil),        // 2: taehoio.idl.services.auth.v1.HealthCheckResponse
-	(*AuthRequest)(nil),                // 3: taehoio.idl.services.auth.v1.AuthRequest
-	(*AuthResponse)(nil),               // 4: taehoio.idl.services.auth.v1.AuthResponse
-	(*AuthByRefreshTokenRequest)(nil),  // 5: taehoio.idl.services.auth.v1.AuthByRefreshTokenRequest
-	(*AuthByRefreshTokenResponse)(nil), // 6: taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse
+	(*AuthByRefreshTokenRequest)(nil),  // 3: taehoio.idl.services.auth.v1.AuthByRefreshTokenRequest
+	(*AuthByRefreshTokenResponse)(nil), // 4: taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse
+	(*AuthRequest)(nil),                // 5: taehoio.idl.services.auth.v1.AuthRequest
+	(*AuthResponse)(nil),               // 6: taehoio.idl.services.auth.v1.AuthResponse
 	(*ParseTokenRequest)(nil),          // 7: taehoio.idl.services.auth.v1.ParseTokenRequest
 	(*ParseTokenResponse)(nil),         // 8: taehoio.idl.services.auth.v1.ParseTokenResponse
-	(v1.Provider)(0),                   // 9: taehoio.idl.services.user.v1.Provider
-	(*durationpb.Duration)(nil),        // 10: google.protobuf.Duration
+	(*durationpb.Duration)(nil),        // 9: google.protobuf.Duration
+	(v1.Provider)(0),                   // 10: taehoio.idl.services.user.v1.Provider
 }
 var file_taehoio_idl_services_auth_v1_auth_proto_depIdxs = []int32{
-	9,  // 0: taehoio.idl.services.auth.v1.AuthRequest.provider:type_name -> taehoio.idl.services.user.v1.Provider
-	10, // 1: taehoio.idl.services.auth.v1.AuthResponse.access_token_expires_in:type_name -> google.protobuf.Duration
-	10, // 2: taehoio.idl.services.auth.v1.AuthResponse.refresh_token_expires_in:type_name -> google.protobuf.Duration
-	10, // 3: taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse.access_token_expires_in:type_name -> google.protobuf.Duration
-	10, // 4: taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse.refresh_token_expires_in:type_name -> google.protobuf.Duration
-	9,  // 5: taehoio.idl.services.auth.v1.ParseTokenResponse.provider:type_name -> taehoio.idl.services.user.v1.Provider
+	9,  // 0: taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse.access_token_expires_in:type_name -> google.protobuf.Duration
+	9,  // 1: taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse.refresh_token_expires_in:type_name -> google.protobuf.Duration
+	10, // 2: taehoio.idl.services.auth.v1.AuthRequest.provider:type_name -> taehoio.idl.services.user.v1.Provider
+	9,  // 3: taehoio.idl.services.auth.v1.AuthResponse.access_token_expires_in:type_name -> google.protobuf.Duration
+	9,  // 4: taehoio.idl.services.auth.v1.AuthResponse.refresh_token_expires_in:type_name -> google.protobuf.Duration
+	10, // 5: taehoio.idl.services.auth.v1.ParseTokenResponse.provider:type_name -> taehoio.idl.services.user.v1.Provider
 	0,  // 6: taehoio.idl.services.auth.v1.ParseTokenResponse.token_type:type_name -> taehoio.idl.services.auth.v1.TokenType
 	1,  // 7: taehoio.idl.services.auth.v1.AuthService.HealthCheck:input_type -> taehoio.idl.services.auth.v1.HealthCheckRequest
-	5,  // 8: taehoio.idl.services.auth.v1.AuthService.AuthByRefreshToken:input_type -> taehoio.idl.services.auth.v1.AuthByRefreshTokenRequest
-	3,  // 9: taehoio.idl.services.auth.v1.AuthService.Auth:input_type -> taehoio.idl.services.auth.v1.AuthRequest
+	3,  // 8: taehoio.idl.services.auth.v1.AuthService.AuthByRefreshToken:input_type -> taehoio.idl.services.auth.v1.AuthByRefreshTokenRequest
+	5,  // 9: taehoio.idl.services.auth.v1.AuthService.Auth:input_type -> taehoio.idl.services.auth.v1.AuthRequest
 	7,  // 10: taehoio.idl.services.auth.v1.AuthService.ParseToken:input_type -> taehoio.idl.services.auth.v1.ParseTokenRequest
 	2,  // 11: taehoio.idl.services.auth.v1.AuthService.HealthCheck:output_type -> taehoio.idl.services.auth.v1.HealthCheckResponse
-	6,  // 12: taehoio.idl.services.auth.v1.AuthService.AuthByRefreshToken:output_type -> taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse
-	4,  // 13: taehoio.idl.services.auth.v1.AuthService.Auth:output_type -> taehoio.idl.services.auth.v1.AuthResponse
+	4,  // 12: taehoio.idl.services.auth.v1.AuthService.AuthByRefreshToken:output_type -> taehoio.idl.services.auth.v1.AuthByRefreshTokenResponse
+	6,  // 13: taehoio.idl.services.auth.v1.AuthService.Auth:output_type -> taehoio.idl.services.auth.v1.AuthResponse
 	8,  // 14: taehoio.idl.services.auth.v1.AuthService.ParseToken:output_type -> taehoio.idl.services.auth.v1.ParseTokenResponse
 	11, // [11:15] is the sub-list for method output_type
 	7,  // [7:11] is the sub-list for method input_type
@@ -712,30 +712,6 @@ func file_taehoio_idl_services_auth_v1_auth_proto_init() {
 			}
 		}
 		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AuthRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*AuthResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AuthByRefreshTokenRequest); i {
 			case 0:
 				return &v.state
@@ -747,8 +723,32 @@ func file_taehoio_idl_services_auth_v1_auth_proto_init() {
 				return nil
 			}
 		}
-		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AuthByRefreshTokenResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AuthRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_taehoio_idl_services_auth_v1_auth_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*AuthResponse); i {
 			case 0:
 				return &v.state
 			case 1:
