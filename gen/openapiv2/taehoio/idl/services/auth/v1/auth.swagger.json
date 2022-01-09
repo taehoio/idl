@@ -48,6 +48,28 @@
         ]
       }
     },
+    "/auth/v1/health": {
+      "get": {
+        "operationId": "AuthService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/servicesauthv1HealthCheckResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "AuthService"
+        ]
+      }
+    },
     "/auth/v1/parse-token": {
       "post": {
         "operationId": "AuthService_ParseToken",
@@ -107,28 +129,6 @@
             }
           }
         ],
-        "tags": [
-          "AuthService"
-        ]
-      }
-    },
-    "/baemincrypto/v1/health": {
-      "get": {
-        "operationId": "AuthService_HealthCheck",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/servicesauthv1HealthCheckResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
         "tags": [
           "AuthService"
         ]

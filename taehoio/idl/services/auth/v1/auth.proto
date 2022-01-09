@@ -16,7 +16,7 @@ import "taehoio/idl/services/user/v1/user.proto";
 service AuthService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
     option (google.api.http) = {
-      get: "/baemincrypto/v1/health"
+      get: "/auth/v1/health"
     };
   }
   rpc AuthByRefreshToken(AuthByRefreshTokenRequest) returns (AuthByRefreshTokenResponse) {

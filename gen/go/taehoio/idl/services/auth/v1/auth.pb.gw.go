@@ -197,7 +197,7 @@ func RegisterAuthServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.auth.v1.AuthService/HealthCheck", runtime.WithHTTPPathPattern("/baemincrypto/v1/health"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.auth.v1.AuthService/HealthCheck", runtime.WithHTTPPathPattern("/auth/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -351,7 +351,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.auth.v1.AuthService/HealthCheck", runtime.WithHTTPPathPattern("/baemincrypto/v1/health"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.auth.v1.AuthService/HealthCheck", runtime.WithHTTPPathPattern("/auth/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -451,7 +451,7 @@ func RegisterAuthServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 }
 
 var (
-	pattern_AuthService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"baemincrypto", "v1", "health"}, ""))
+	pattern_AuthService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"auth", "v1", "health"}, ""))
 
 	pattern_AuthService_AuthByRefreshToken_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"auth", "v1", "auth-by-refresh-token"}, ""))
 
