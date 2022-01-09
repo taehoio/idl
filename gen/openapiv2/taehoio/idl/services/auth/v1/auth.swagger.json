@@ -69,70 +69,6 @@
           "AuthService"
         ]
       }
-    },
-    "/auth/v1/parse-token": {
-      "post": {
-        "operationId": "AuthService_ParseToken",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1ParseTokenResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1ParseTokenRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AuthService"
-        ]
-      }
-    },
-    "/auth/v1/verify-token": {
-      "post": {
-        "operationId": "AuthService_VerifyToken",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1VerifyTokenResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/v1VerifyTokenRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AuthService"
-        ]
-      }
     }
   },
   "definitions": {
@@ -183,19 +119,11 @@
         "accessTokenExpiresIn": {
           "type": "string"
         },
-        "accessTokenExpiresAt": {
-          "type": "string",
-          "format": "date-time"
-        },
         "refreshToken": {
           "type": "string"
         },
         "refreshTokenExpiresIn": {
           "type": "string"
-        },
-        "refreshTokenExpiresAt": {
-          "type": "string",
-          "format": "date-time"
         }
       }
     },
@@ -208,26 +136,10 @@
         "accessTokenExpiresIn": {
           "type": "string"
         },
-        "accessTokenExpiresAt": {
-          "type": "string",
-          "format": "date-time"
-        },
         "refreshToken": {
           "type": "string"
         },
         "refreshTokenExpiresIn": {
-          "type": "string"
-        },
-        "refreshTokenExpiresAt": {
-          "type": "string",
-          "format": "date-time"
-        }
-      }
-    },
-    "v1ParseTokenRequest": {
-      "type": "object",
-      "properties": {
-        "token": {
           "type": "string"
         }
       }
@@ -235,11 +147,14 @@
     "v1ParseTokenResponse": {
       "type": "object",
       "properties": {
-        "tokenType": {
-          "$ref": "#/definitions/v1TokenType"
+        "provider": {
+          "$ref": "#/definitions/v1Provider"
         },
         "identifier": {
           "type": "string"
+        },
+        "tokenType": {
+          "$ref": "#/definitions/v1TokenType"
         }
       }
     },
@@ -259,25 +174,6 @@
         "TOKEN_TYPE_REFRESH"
       ],
       "default": "TOKEN_TYPE_UNSPECIFIED"
-    },
-    "v1VerifyTokenRequest": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "type": "string"
-        }
-      }
-    },
-    "v1VerifyTokenResponse": {
-      "type": "object",
-      "properties": {
-        "tokenType": {
-          "$ref": "#/definitions/v1TokenType"
-        },
-        "isValid": {
-          "type": "boolean"
-        }
-      }
     }
   }
 }
