@@ -1,0 +1,238 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "taehoio/idl/services/oneonone/v1/oneonone.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "OneononeService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/categories": {
+      "get": {
+        "operationId": "OneononeService_ListCategories",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListCategoriesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "OneononeService"
+        ]
+      }
+    },
+    "/v1/categories/{categoryId}/questions": {
+      "get": {
+        "operationId": "OneononeService_ListQuestionsByCategoryId",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1ListQuestionsByCategoryIdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OneononeService"
+        ]
+      }
+    },
+    "/v1/categories/{categoryId}/questions/random": {
+      "get": {
+        "operationId": "OneononeService_GetRandomQuestionByCategoryId",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRandomQuestionByCategoryIdResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OneononeService"
+        ]
+      }
+    },
+    "/v1/health": {
+      "get": {
+        "operationId": "OneononeService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1HealthCheckResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "OneononeService"
+        ]
+      }
+    },
+    "/v1/questions/random": {
+      "get": {
+        "operationId": "OneononeService_GetRandomQuestion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetRandomQuestionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "OneononeService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetRandomQuestionByCategoryIdResponse": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "$ref": "#/definitions/v1Question"
+        }
+      }
+    },
+    "v1GetRandomQuestionResponse": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "$ref": "#/definitions/v1Question"
+        }
+      }
+    },
+    "v1HealthCheckResponse": {
+      "type": "object"
+    },
+    "v1ListCategoriesResponse": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Category"
+          }
+        }
+      }
+    },
+    "v1ListQuestionsByCategoryIdResponse": {
+      "type": "object",
+      "properties": {
+        "questions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Question"
+          }
+        }
+      }
+    },
+    "v1Question": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

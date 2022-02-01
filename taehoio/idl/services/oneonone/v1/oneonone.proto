@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package taehoio.idl.services.oneonone.v1;
+
+option go_package = "github.com/taehoio/idl/gen/go/taehoio/idl/services/oneonone/v1;oneononev1";
+option java_multiple_files = true;
+option java_outer_classname = "OneononeProto";
+option java_package = "com.github.taehoio.idl.services.oneonone.v1";
+
+import "google/api/annotations.proto";
+
+service OneononeService {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
+    option (google.api.http) = {
+      get: "/v1/health"
+    };
+  }
+  rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse) {
+    option (google.api.http) = {
+      get: "/v1/categories"
+    };
+  }
+  rpc ListQuestionsByCategoryId(ListQuestionsByCategoryIdRequest) returns (ListQuestionsByCategoryIdResponse) {
+    option (google.api.http) = {
+      get: "/v1/categories/{category_id}/questions"
+    };
+  }
+  rpc GetRandomQuestion(GetRandomQuestionRequest) returns (GetRandomQuestionResponse) {
+    option (google.api.http) = {
+      get: "/v1/questions/random"
+    };
+  }
+  rpc GetRandomQuestionByCategoryId(GetRandomQuestionByCategoryIdRequest) returns (GetRandomQuestionByCategoryIdResponse) {
+    option (google.api.http) = {
+      get: "/v1/categories/{category_id}/questions/random"
+    };
+  }
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
+
+message ListCategoriesRequest {}
+
+message Category {
+  string id = 1;
+  string name = 2;
+}
+
+message Question {
+  string id = 1;
+  string question = 2;
+}
+
+message ListCategoriesResponse {
+  repeated Category categories = 1;
+}
+
+message ListQuestionsByCategoryIdRequest {
+  string category_id = 1;
+}
+
+message ListQuestionsByCategoryIdResponse {
+  repeated Question questions = 1;
+}
+
+message GetRandomQuestionRequest {}
+
+message GetRandomQuestionResponse {
+  Question question = 1;
+}
+
+message GetRandomQuestionByCategoryIdRequest {
+  string category_id = 1;
+}
+
+message GetRandomQuestionByCategoryIdResponse {
+  Question question = 1;
+}
