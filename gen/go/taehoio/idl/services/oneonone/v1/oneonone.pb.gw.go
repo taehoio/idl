@@ -201,7 +201,7 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/v1/health"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/oneonone/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -224,7 +224,7 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/v1/categories"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/oneonone/v1/categories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -247,7 +247,7 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/v1/categories/{category_id}/questions"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -270,7 +270,7 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/v1/questions/random"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -293,7 +293,7 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/v1/categories/{category_id}/questions/random"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -355,7 +355,7 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/v1/health"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/oneonone/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -375,7 +375,7 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/v1/categories"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/oneonone/v1/categories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -395,7 +395,7 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/v1/categories/{category_id}/questions"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -415,7 +415,7 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/v1/questions/random"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -435,7 +435,7 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/v1/categories/{category_id}/questions/random"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -455,15 +455,15 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 }
 
 var (
-	pattern_OneononeService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "health"}, ""))
+	pattern_OneononeService_HealthCheck_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"oneonone", "v1", "health"}, ""))
 
-	pattern_OneononeService_ListCategories_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "categories"}, ""))
+	pattern_OneononeService_ListCategories_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"oneonone", "v1", "categories"}, ""))
 
-	pattern_OneononeService_ListQuestionsByCategoryId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"v1", "categories", "category_id", "questions"}, ""))
+	pattern_OneononeService_ListQuestionsByCategoryId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"oneonone", "v1", "categories", "category_id", "questions"}, ""))
 
-	pattern_OneononeService_GetRandomQuestion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "questions", "random"}, ""))
+	pattern_OneononeService_GetRandomQuestion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"oneonone", "v1", "questions", "random"}, ""))
 
-	pattern_OneononeService_GetRandomQuestionByCategoryId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3, 2, 4}, []string{"v1", "categories", "category_id", "questions", "random"}, ""))
+	pattern_OneononeService_GetRandomQuestionByCategoryId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 2, 4, 2, 5}, []string{"oneonone", "v1", "categories", "category_id", "questions", "random"}, ""))
 )
 
 var (

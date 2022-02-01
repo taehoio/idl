@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/v1/categories": {
+    "/oneonone/v1/categories": {
       "get": {
         "operationId": "OneononeService_ListCategories",
         "responses": {
@@ -38,7 +38,7 @@
         ]
       }
     },
-    "/v1/categories/{categoryId}/questions": {
+    "/oneonone/v1/categories/{categoryId}/questions": {
       "get": {
         "operationId": "OneononeService_ListQuestionsByCategoryId",
         "responses": {
@@ -68,7 +68,7 @@
         ]
       }
     },
-    "/v1/categories/{categoryId}/questions/random": {
+    "/oneonone/v1/categories/{categoryId}/questions/random": {
       "get": {
         "operationId": "OneononeService_GetRandomQuestionByCategoryId",
         "responses": {
@@ -98,7 +98,7 @@
         ]
       }
     },
-    "/v1/health": {
+    "/oneonone/v1/health": {
       "get": {
         "operationId": "OneononeService_HealthCheck",
         "responses": {
@@ -120,7 +120,7 @@
         ]
       }
     },
-    "/v1/questions/random": {
+    "/oneonone/v1/questions/random": {
       "get": {
         "operationId": "OneononeService_GetRandomQuestion",
         "responses": {
