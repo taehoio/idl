@@ -25,6 +25,11 @@ service OneononeService {
       get: "/oneonone/v1/categories/{category_id}/questions"
     };
   }
+  rpc GetQuestion(GetQuestionRequest) returns (GetQuestionResponse) {
+    option (google.api.http) = {
+      get: "/oneonone/v1/questions/{id}"
+    };
+  }
   rpc GetRandomQuestion(GetRandomQuestionRequest) returns (GetRandomQuestionResponse) {
     option (google.api.http) = {
       get: "/oneonone/v1/questions/random"
@@ -63,6 +68,14 @@ message ListQuestionsByCategoryIdRequest {
 
 message ListQuestionsByCategoryIdResponse {
   repeated Question questions = 1;
+}
+
+message GetQuestionRequest {
+  string id = 1;
+}
+
+message GetQuestionResponse {
+  Question question = 1;
 }
 
 message GetRandomQuestionRequest {}

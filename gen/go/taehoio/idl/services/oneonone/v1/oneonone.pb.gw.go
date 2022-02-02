@@ -119,6 +119,58 @@ func local_request_OneononeService_ListQuestionsByCategoryId_0(ctx context.Conte
 
 }
 
+func request_OneononeService_GetQuestion_0(ctx context.Context, marshaler runtime.Marshaler, client OneononeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetQuestionRequest
+	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
+	}
+
+	protoReq.Id, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
+	}
+
+	msg, err := client.GetQuestion(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
+
+}
+
+func local_request_OneononeService_GetQuestion_0(ctx context.Context, marshaler runtime.Marshaler, server OneononeServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetQuestionRequest
+	var metadata runtime.ServerMetadata
+
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["id"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
+	}
+
+	protoReq.Id, err = runtime.String(val)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
+	}
+
+	msg, err := server.GetQuestion(ctx, &protoReq)
+	return msg, metadata, err
+
+}
+
 func request_OneononeService_GetRandomQuestion_0(ctx context.Context, marshaler runtime.Marshaler, client OneononeServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GetRandomQuestionRequest
 	var metadata runtime.ServerMetadata
@@ -261,6 +313,29 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		}
 
 		forward_OneononeService_ListQuestionsByCategoryId_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
+	mux.Handle("GET", pattern_OneononeService_GetQuestion_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		var stream runtime.ServerTransportStream
+		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/{id}"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := local_request_OneononeService_GetQuestion_0(rctx, inboundMarshaler, server, req, pathParams)
+		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_OneononeService_GetQuestion_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -411,6 +486,26 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 
 	})
 
+	mux.Handle("GET", pattern_OneononeService_GetQuestion_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/{id}"))
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_OneononeService_GetQuestion_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_OneononeService_GetQuestion_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+
+	})
+
 	mux.Handle("GET", pattern_OneononeService_GetRandomQuestion_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
@@ -461,6 +556,8 @@ var (
 
 	pattern_OneononeService_ListQuestionsByCategoryId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 2, 4}, []string{"oneonone", "v1", "categories", "category_id", "questions"}, ""))
 
+	pattern_OneononeService_GetQuestion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"oneonone", "v1", "questions", "id"}, ""))
+
 	pattern_OneononeService_GetRandomQuestion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"oneonone", "v1", "questions", "random"}, ""))
 
 	pattern_OneononeService_GetRandomQuestionByCategoryId_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 2, 4, 2, 5}, []string{"oneonone", "v1", "categories", "category_id", "questions", "random"}, ""))
@@ -472,6 +569,8 @@ var (
 	forward_OneononeService_ListCategories_0 = runtime.ForwardResponseMessage
 
 	forward_OneononeService_ListQuestionsByCategoryId_0 = runtime.ForwardResponseMessage
+
+	forward_OneononeService_GetQuestion_0 = runtime.ForwardResponseMessage
 
 	forward_OneononeService_GetRandomQuestion_0 = runtime.ForwardResponseMessage
 
