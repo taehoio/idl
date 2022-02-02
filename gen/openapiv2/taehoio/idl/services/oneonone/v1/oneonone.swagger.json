@@ -141,6 +141,36 @@
           "OneononeService"
         ]
       }
+    },
+    "/oneonone/v1/questions/{id}": {
+      "get": {
+        "operationId": "OneononeService_GetQuestion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetQuestionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OneononeService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -179,6 +209,14 @@
         },
         "name": {
           "type": "string"
+        }
+      }
+    },
+    "v1GetQuestionResponse": {
+      "type": "object",
+      "properties": {
+        "question": {
+          "$ref": "#/definitions/v1Question"
         }
       }
     },
