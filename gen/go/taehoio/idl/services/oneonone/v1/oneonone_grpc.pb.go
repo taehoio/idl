@@ -26,8 +26,8 @@ type OneononeServiceClient interface {
 	ListCategories(ctx context.Context, in *ListCategoriesRequest, opts ...grpc.CallOption) (*ListCategoriesResponse, error)
 	ListQuestionsByCategoryId(ctx context.Context, in *ListQuestionsByCategoryIdRequest, opts ...grpc.CallOption) (*ListQuestionsByCategoryIdResponse, error)
 	GetRandomQuestionByCategoryId(ctx context.Context, in *GetRandomQuestionByCategoryIdRequest, opts ...grpc.CallOption) (*GetRandomQuestionByCategoryIdResponse, error)
-	GetRandomQuestion(ctx context.Context, in *GetRandomQuestionRequest, opts ...grpc.CallOption) (*GetRandomQuestionResponse, error)
 	GetQuestion(ctx context.Context, in *GetQuestionRequest, opts ...grpc.CallOption) (*GetQuestionResponse, error)
+	GetRandomQuestion(ctx context.Context, in *GetRandomQuestionRequest, opts ...grpc.CallOption) (*GetRandomQuestionResponse, error)
 }
 
 type oneononeServiceClient struct {
@@ -74,18 +74,18 @@ func (c *oneononeServiceClient) GetRandomQuestionByCategoryId(ctx context.Contex
 	return out, nil
 }
 
-func (c *oneononeServiceClient) GetRandomQuestion(ctx context.Context, in *GetRandomQuestionRequest, opts ...grpc.CallOption) (*GetRandomQuestionResponse, error) {
-	out := new(GetRandomQuestionResponse)
-	err := c.cc.Invoke(ctx, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", in, out, opts...)
+func (c *oneononeServiceClient) GetQuestion(ctx context.Context, in *GetQuestionRequest, opts ...grpc.CallOption) (*GetQuestionResponse, error) {
+	out := new(GetQuestionResponse)
+	err := c.cc.Invoke(ctx, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *oneononeServiceClient) GetQuestion(ctx context.Context, in *GetQuestionRequest, opts ...grpc.CallOption) (*GetQuestionResponse, error) {
-	out := new(GetQuestionResponse)
-	err := c.cc.Invoke(ctx, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", in, out, opts...)
+func (c *oneononeServiceClient) GetRandomQuestion(ctx context.Context, in *GetRandomQuestionRequest, opts ...grpc.CallOption) (*GetRandomQuestionResponse, error) {
+	out := new(GetRandomQuestionResponse)
+	err := c.cc.Invoke(ctx, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -100,8 +100,8 @@ type OneononeServiceServer interface {
 	ListCategories(context.Context, *ListCategoriesRequest) (*ListCategoriesResponse, error)
 	ListQuestionsByCategoryId(context.Context, *ListQuestionsByCategoryIdRequest) (*ListQuestionsByCategoryIdResponse, error)
 	GetRandomQuestionByCategoryId(context.Context, *GetRandomQuestionByCategoryIdRequest) (*GetRandomQuestionByCategoryIdResponse, error)
-	GetRandomQuestion(context.Context, *GetRandomQuestionRequest) (*GetRandomQuestionResponse, error)
 	GetQuestion(context.Context, *GetQuestionRequest) (*GetQuestionResponse, error)
+	GetRandomQuestion(context.Context, *GetRandomQuestionRequest) (*GetRandomQuestionResponse, error)
 }
 
 // UnimplementedOneononeServiceServer should be embedded to have forward compatible implementations.
@@ -120,11 +120,11 @@ func (UnimplementedOneononeServiceServer) ListQuestionsByCategoryId(context.Cont
 func (UnimplementedOneononeServiceServer) GetRandomQuestionByCategoryId(context.Context, *GetRandomQuestionByCategoryIdRequest) (*GetRandomQuestionByCategoryIdResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRandomQuestionByCategoryId not implemented")
 }
-func (UnimplementedOneononeServiceServer) GetRandomQuestion(context.Context, *GetRandomQuestionRequest) (*GetRandomQuestionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetRandomQuestion not implemented")
-}
 func (UnimplementedOneononeServiceServer) GetQuestion(context.Context, *GetQuestionRequest) (*GetQuestionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetQuestion not implemented")
+}
+func (UnimplementedOneononeServiceServer) GetRandomQuestion(context.Context, *GetRandomQuestionRequest) (*GetRandomQuestionResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetRandomQuestion not implemented")
 }
 
 // UnsafeOneononeServiceServer may be embedded to opt out of forward compatibility for this service.
@@ -210,24 +210,6 @@ func _OneononeService_GetRandomQuestionByCategoryId_Handler(srv interface{}, ctx
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OneononeService_GetRandomQuestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetRandomQuestionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OneononeServiceServer).GetRandomQuestion(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OneononeServiceServer).GetRandomQuestion(ctx, req.(*GetRandomQuestionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _OneononeService_GetQuestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetQuestionRequest)
 	if err := dec(in); err != nil {
@@ -242,6 +224,24 @@ func _OneononeService_GetQuestion_Handler(srv interface{}, ctx context.Context, 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OneononeServiceServer).GetQuestion(ctx, req.(*GetQuestionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _OneononeService_GetRandomQuestion_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetRandomQuestionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OneononeServiceServer).GetRandomQuestion(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OneononeServiceServer).GetRandomQuestion(ctx, req.(*GetRandomQuestionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -270,12 +270,12 @@ var OneononeService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OneononeService_GetRandomQuestionByCategoryId_Handler,
 		},
 		{
-			MethodName: "GetRandomQuestion",
-			Handler:    _OneononeService_GetRandomQuestion_Handler,
-		},
-		{
 			MethodName: "GetQuestion",
 			Handler:    _OneononeService_GetQuestion_Handler,
+		},
+		{
+			MethodName: "GetRandomQuestion",
+			Handler:    _OneononeService_GetRandomQuestion_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
