@@ -1,0 +1,154 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "taehoio/idl/services/texttospeech/v1/texttospeech.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "TexttospeechService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/texttospeech/v1/health": {
+      "get": {
+        "operationId": "TexttospeechService_HealthCheck",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1HealthCheckResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "TexttospeechService"
+        ]
+      }
+    },
+    "/texttospeech/v1/synthesize": {
+      "post": {
+        "operationId": "TexttospeechService_Synthesize",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1SynthesizeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1SynthesizeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "TexttospeechService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1HealthCheckResponse": {
+      "type": "object"
+    },
+    "v1Language": {
+      "type": "string",
+      "enum": [
+        "LANGUAGE_UNSPECIFIED",
+        "LANGUAGE_EN_US",
+        "LANGUAGE_KO_KR"
+      ],
+      "default": "LANGUAGE_UNSPECIFIED"
+    },
+    "v1SpeechMark": {
+      "type": "object",
+      "properties": {
+        "wordIndex": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "timeMs": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1SynthesizeRequest": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "language": {
+          "$ref": "#/definitions/v1Language"
+        }
+      }
+    },
+    "v1SynthesizeResponse": {
+      "type": "object",
+      "properties": {
+        "audioContent": {
+          "type": "string",
+          "format": "byte"
+        },
+        "speechMarks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1SpeechMark"
+          }
+        }
+      }
+    }
+  }
+}

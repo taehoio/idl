@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package taehoio.idl.services.oneonone.v1;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/taehoio/idl/gen/go/taehoio/idl/services/oneonone/v1;oneononev1";
 option java_multiple_files = true;
 option java_outer_classname = "OneononeProto";
 option java_package = "com.github.taehoio.idl.services.oneonone.v1";
-
-import "google/api/annotations.proto";
 
 service OneononeService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
