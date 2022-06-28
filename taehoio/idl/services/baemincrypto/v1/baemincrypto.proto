@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package taehoio.idl.services.baemincrypto.v1;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/taehoio/idl/gen/go/taehoio/idl/services/baemincrypto/v1;baemincryptov1";
 option java_multiple_files = true;
 option java_outer_classname = "BaemincryptoProto";
 option java_package = "com.github.taehoio.idl.services.baemincrypto.v1";
-
-import "google/api/annotations.proto";
 
 service BaemincryptoService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
@@ -16,16 +16,16 @@ service BaemincryptoService {
     };
   }
   rpc EncryptUserBaedalHeaderValue(EncryptUserBaedalHeaderValueRequest) returns (EncryptUserBaedalHeaderValueResponse) {
-      option (google.api.http) = {
-        post: "/baemincrypto/v1/encrypt-user-baedal-header"
-        body: "*"
-      };
+    option (google.api.http) = {
+      post: "/baemincrypto/v1/encrypt-user-baedal-header"
+      body: "*"
+    };
   }
   rpc DecryptUserBaedalHeaderValue(DecryptUserBaedalHeaderValueRequest) returns (DecryptUserBaedalHeaderValueResponse) {
-      option (google.api.http) = {
-        post: "/baemincrypto/v1/decrypt-user-baedal-header"
-        body: "*"
-      };
+    option (google.api.http) = {
+      post: "/baemincrypto/v1/decrypt-user-baedal-header"
+      body: "*"
+    };
   }
 }
 

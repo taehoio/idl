@@ -1,21 +1,18 @@
-.PHONY: install-dependencies
-install-dependencies:
-	@go install \
-		github.com/bufbuild/buf/cmd/buf@v1.0.0-rc10 \
-		github.com/bufbuild/buf/cmd/protoc-gen-buf-breaking@v1.0.0-rc10 \
-		github.com/bufbuild/buf/cmd/protoc-gen-buf-lint@v1.0.0-rc10
-	@go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.27.1
-	@go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2.0
-	@go install \
-		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.7.2 \
-		github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.7.2
+.PHONY: install-tools
+install-tools:
+	@echo Installing tools from tools.go
+	@cat tools.go | grep _ | awk -F'"' '{print $$2}' | xargs -tI % go install %
 
 .PHONY: lint
-lint: install-dependencies
+lint: install-tools
 	buf lint
 
+.PHONY: format
+format: install-tools
+	buf format -w
+
 .PHONY: generate
-generate: install-dependencies
+generate: install-tools
 	buf generate
 
 .PHONY: clean
