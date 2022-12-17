@@ -105,7 +105,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1HealthCheckResponse"
+              "$ref": "#/definitions/servicesoneononev1HealthCheckResponse"
             }
           },
           "default": {
@@ -201,6 +201,9 @@
         }
       }
     },
+    "servicesoneononev1HealthCheckResponse": {
+      "type": "object"
+    },
     "v1Category": {
       "type": "object",
       "properties": {
@@ -235,9 +238,6 @@
           "$ref": "#/definitions/v1Question"
         }
       }
-    },
-    "v1HealthCheckResponse": {
-      "type": "object"
     },
     "v1ListCategoriesResponse": {
       "type": "object",

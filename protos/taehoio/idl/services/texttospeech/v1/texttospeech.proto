@@ -11,9 +11,7 @@ option java_package = "com.github.taehoio.idl.services.texttospeech.v1";
 
 service TexttospeechService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/texttospeech/v1/health"
-    };
+    option (google.api.http) = {get: "/texttospeech/v1/health"};
   }
   rpc Synthesize(SynthesizeRequest) returns (SynthesizeResponse) {
     option (google.api.http) = {

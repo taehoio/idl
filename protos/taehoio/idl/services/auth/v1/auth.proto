@@ -13,9 +13,7 @@ option java_package = "com.github.taehoio.idl.services.auth.v1";
 
 service AuthService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/auth/v1/health"
-    };
+    option (google.api.http) = {get: "/auth/v1/health"};
   }
   rpc AuthByRefreshToken(AuthByRefreshTokenRequest) returns (AuthByRefreshTokenResponse) {
     option (google.api.http) = {

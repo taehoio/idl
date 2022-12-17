@@ -11,14 +11,10 @@ option java_package = "com.github.taehoio.idl.services.api.v1";
 
 service ApiService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/v1/health"
-    };
+    option (google.api.http) = {get: "/v1/health"};
   }
   rpc Hello(HelloRequest) returns (HelloResponse) {
-    option (google.api.http) = {
-      get: "/v1/hello"
-    };
+    option (google.api.http) = {get: "/v1/hello"};
   }
 }
 

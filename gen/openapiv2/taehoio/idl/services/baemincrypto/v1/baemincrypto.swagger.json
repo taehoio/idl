@@ -87,7 +87,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1HealthCheckResponse"
+              "$ref": "#/definitions/servicesbaemincryptov1HealthCheckResponse"
             }
           },
           "default": {
@@ -131,6 +131,9 @@
         }
       }
     },
+    "servicesbaemincryptov1HealthCheckResponse": {
+      "type": "object"
+    },
     "v1DecryptUserBaedalHeaderValueRequest": {
       "type": "object",
       "properties": {
@@ -162,9 +165,6 @@
           "type": "string"
         }
       }
-    },
-    "v1HealthCheckResponse": {
-      "type": "object"
     }
   }
 }
