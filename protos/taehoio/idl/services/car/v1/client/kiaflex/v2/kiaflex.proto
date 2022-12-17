@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package taehoio.idl.services.car.v1.client.kiaflex.v2;
+
+option go_package = "github.com/taehoio/idl/gen/go/taehoio/idl/services/car/v1/client/kiaflex/v2;kiaflexv2";
+option java_multiple_files = true;
+option java_outer_classname = "KiaflexProto";
+option java_package = "com.github.taehoio.idl.services.car.v1.client.kiaflex.v2";
+
+message ListProductGroupsRequest {}
+
+message ListProductGroupsResponse {
+  string code = 1;
+  string message = 2;
+
+  message Data {
+    message Content {
+      int32 display_product_category_id = 1 [json_name = "displayProductCategoryId"];
+      string display_product_category_name = 2 [json_name = "displayProductCategoryName"];
+    }
+
+    repeated Content content = 1;
+  }
+
+  Data data = 3;
+}
+
+message ListCategoryProductsRequest {
+  int32 display_product_category_id = 1;
+}
+
+message ListCategoryProductsResponse {
+  string code = 1;
+  string message = 2;
+
+  message Data {
+    message Content {
+      int32 product_display_id = 1 [json_name = "productDisplayId"];
+
+      message Product {
+        int32 product_id = 1 [json_name = "productId"];
+        string product_name = 2 [json_name = "productName"];
+        string description = 3 [json_name = "description"];
+        string main_image_file_id = 4 [json_name = "mainImageFileId"];
+        int32 basis_price = 5 [json_name = "basisPrice"];
+      }
+
+      Product product = 2;
+    }
+
+    repeated Content content = 1;
+  }
+
+  Data data = 3;
+}
+
+message ListProductsRequest {
+  int32 product_id = 1;
+}
+
+message ListProductsResponse {
+  string code = 1;
+  string message = 2;
+
+  message Data {
+    int32 product_id = 1 [json_name = "productId"];
+    string product_name = 2 [json_name = "productName"];
+    string side_code = 3 [json_name = "sidoCode"];
+    int32 transportation_area_group_id = 4 [json_name = "transportationAreaGroupId"];
+    string transportation_area_group_name = 5 [json_name = "transportationAreaGroupName"];
+    string description = 6 [json_name = "description"];
+    string main_image_file_id = 7 [json_name = "mainImageFileId"];
+    int32 basis_price = 8 [json_name = "basisPrice"];
+
+    message VehicleTrim {
+      int32 vehicle_teim_id = 1 [json_name = "vehicleTrimId"];
+      string vehicle_trim_name = 2 [json_name = "vehicleTrimName"];
+      string vehicle_trim_display_option_name = 3 [json_name = "vehicleTrimDisplayOptionName"];
+      int32 vehicle_capacity_person_count = 4 [json_name = "vehicleCapacityPersonCount"];
+      string fuel_type_code = 5 [json_name = "fuelTypeCode"];
+      string car_type_code = 6 [json_name = "carTyleCode"];
+      string car_appearance_type_code = 7 [json_name = "carAppearanceTypeCode"];
+      string vehicle_year = 8 [json_name = "vehicleYear"];
+      float authorized_fuel_efficiency = 9 [json_name = "authorizedFuelEfficiency"];
+      int32 capacity = 10 [json_name = "capacity"];
+      int32 fuel_tank_volume = 11 [json_name = "fuelTankVolume"];
+      string starting_method_type_code = 12 [json_name = "startingMethodTypeCode"];
+
+      message VehicleTrimColor {
+        int32 vehicle_trim_color_id = 1 [json_name = "vehicleTrimColorId"];
+        string vehicle_color_name = 2 [json_name = "vehicleColorName"];
+        string vehicle_image_file_id = 3 [json_name = "vehicleImageFileId"];
+        string color_image_file_id = 4 [json_name = "colorImageFileId"];
+        string stock_yn = 5 [json_name = "stockYn"];
+
+        message VehicleStock {
+          string transportation_method_code = 1 [json_name = "transportationMethodCode"];
+          string transportation_method_code_name = 2 [json_name = "transportationMethodCodeName"];
+          string stock_yn = 3 [json_name = "stockYn"];
+        }
+
+        repeated VehicleStock vehicle_stocks = 6 [json_name = "vehicleStocks"];
+      }
+
+      repeated VehicleTrimColor vehicle_trim_colors = 13 [json_name = "vehicleTrimColors"];
+    }
+
+    repeated VehicleTrim vehicle_trims = 9 [json_name = "vehicleTrims"];
+  }
+
+  Data data = 3;
+}
