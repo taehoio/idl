@@ -2,10 +2,26 @@ syntax = "proto3";
 
 package taehoio.idl.services.car.v1.client.kiaflex.v2;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/taehoio/idl/gen/go/taehoio/idl/services/car/v1/client/kiaflex/v2;kiaflexv2";
 option java_multiple_files = true;
 option java_outer_classname = "KiaflexProto";
 option java_package = "com.github.taehoio.idl.services.car.v1.client.kiaflex.v2";
+
+service KiaflexService {
+  rpc ListProductGroups(ListProductGroupsRequest) returns (ListProductGroupsResponse) {
+    option (google.api.http) = {get: "/api/product-groups"};
+  }
+
+  rpc ListCategoryProducts(ListCategoryProductsRequest) returns (ListCategoryProductsResponse) {
+    option (google.api.http) = {get: "/api/product-groups/{display_product_category_id}/products"};
+  }
+
+  rpc ListProducts(ListProductsRequest) returns (ListProductsResponse) {
+    option (google.api.http) = {get: "/api/products/{product_id}"};
+  }
+}
 
 message ListProductGroupsRequest {}
 

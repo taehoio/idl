@@ -1,4 +1,16 @@
 /* eslint-disable */
+import {
+  CallOptions,
+  ChannelCredentials,
+  Client,
+  ClientOptions,
+  ClientUnaryCall,
+  handleUnaryCall,
+  makeGenericClientConstructor,
+  Metadata,
+  ServiceError,
+  UntypedServiceImplementation,
+} from "@grpc/grpc-js";
 import _m0 from "protobufjs/minimal";
 
 export const protobufPackage = "taehoio.idl.services.car.v1.client.kiaflex.v2";
@@ -1329,6 +1341,102 @@ export const ListProductsResponse_Data_VehicleTrim_VehicleTrimColor_VehicleStock
     message.stock_yn = object.stock_yn ?? "";
     return message;
   },
+};
+
+export type KiaflexServiceService = typeof KiaflexServiceService;
+export const KiaflexServiceService = {
+  listProductGroups: {
+    path: "/taehoio.idl.services.car.v1.client.kiaflex.v2.KiaflexService/ListProductGroups",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ListProductGroupsRequest) => Buffer.from(ListProductGroupsRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => ListProductGroupsRequest.decode(value),
+    responseSerialize: (value: ListProductGroupsResponse) =>
+      Buffer.from(ListProductGroupsResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => ListProductGroupsResponse.decode(value),
+  },
+  listCategoryProducts: {
+    path: "/taehoio.idl.services.car.v1.client.kiaflex.v2.KiaflexService/ListCategoryProducts",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ListCategoryProductsRequest) =>
+      Buffer.from(ListCategoryProductsRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => ListCategoryProductsRequest.decode(value),
+    responseSerialize: (value: ListCategoryProductsResponse) =>
+      Buffer.from(ListCategoryProductsResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => ListCategoryProductsResponse.decode(value),
+  },
+  listProducts: {
+    path: "/taehoio.idl.services.car.v1.client.kiaflex.v2.KiaflexService/ListProducts",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ListProductsRequest) => Buffer.from(ListProductsRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => ListProductsRequest.decode(value),
+    responseSerialize: (value: ListProductsResponse) => Buffer.from(ListProductsResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => ListProductsResponse.decode(value),
+  },
+} as const;
+
+export interface KiaflexServiceServer extends UntypedServiceImplementation {
+  listProductGroups: handleUnaryCall<ListProductGroupsRequest, ListProductGroupsResponse>;
+  listCategoryProducts: handleUnaryCall<ListCategoryProductsRequest, ListCategoryProductsResponse>;
+  listProducts: handleUnaryCall<ListProductsRequest, ListProductsResponse>;
+}
+
+export interface KiaflexServiceClient extends Client {
+  listProductGroups(
+    request: ListProductGroupsRequest,
+    callback: (error: ServiceError | null, response: ListProductGroupsResponse) => void,
+  ): ClientUnaryCall;
+  listProductGroups(
+    request: ListProductGroupsRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ListProductGroupsResponse) => void,
+  ): ClientUnaryCall;
+  listProductGroups(
+    request: ListProductGroupsRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ListProductGroupsResponse) => void,
+  ): ClientUnaryCall;
+  listCategoryProducts(
+    request: ListCategoryProductsRequest,
+    callback: (error: ServiceError | null, response: ListCategoryProductsResponse) => void,
+  ): ClientUnaryCall;
+  listCategoryProducts(
+    request: ListCategoryProductsRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ListCategoryProductsResponse) => void,
+  ): ClientUnaryCall;
+  listCategoryProducts(
+    request: ListCategoryProductsRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ListCategoryProductsResponse) => void,
+  ): ClientUnaryCall;
+  listProducts(
+    request: ListProductsRequest,
+    callback: (error: ServiceError | null, response: ListProductsResponse) => void,
+  ): ClientUnaryCall;
+  listProducts(
+    request: ListProductsRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ListProductsResponse) => void,
+  ): ClientUnaryCall;
+  listProducts(
+    request: ListProductsRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ListProductsResponse) => void,
+  ): ClientUnaryCall;
+}
+
+export const KiaflexServiceClient = makeGenericClientConstructor(
+  KiaflexServiceService,
+  "taehoio.idl.services.car.v1.client.kiaflex.v2.KiaflexService",
+) as unknown as {
+  new (address: string, credentials: ChannelCredentials, options?: Partial<ClientOptions>): KiaflexServiceClient;
+  service: typeof KiaflexServiceService;
 };
 
 export interface DataLoaderOptions {

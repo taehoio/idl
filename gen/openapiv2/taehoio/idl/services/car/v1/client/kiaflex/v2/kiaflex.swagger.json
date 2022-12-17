@@ -4,14 +4,219 @@
     "title": "taehoio/idl/services/car/v1/client/kiaflex/v2/kiaflex.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "KiaflexService"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/product-groups": {
+      "get": {
+        "operationId": "KiaflexService_ListProductGroups",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2ListProductGroupsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "KiaflexService"
+        ]
+      }
+    },
+    "/api/product-groups/{displayProductCategoryId}/products": {
+      "get": {
+        "operationId": "KiaflexService_ListCategoryProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2ListCategoryProductsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "displayProductCategoryId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "KiaflexService"
+        ]
+      }
+    },
+    "/api/products/{productId}": {
+      "get": {
+        "operationId": "KiaflexService_ListProducts",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2ListProductsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "KiaflexService"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "ContentProduct": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "mainImageFileId": {
+          "type": "string"
+        },
+        "basisPrice": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "DataVehicleTrim": {
+      "type": "object",
+      "properties": {
+        "vehicleTrimId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "vehicleTrimName": {
+          "type": "string"
+        },
+        "vehicleTrimDisplayOptionName": {
+          "type": "string"
+        },
+        "vehicleCapacityPersonCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fuelTypeCode": {
+          "type": "string"
+        },
+        "carTyleCode": {
+          "type": "string"
+        },
+        "carAppearanceTypeCode": {
+          "type": "string"
+        },
+        "vehicleYear": {
+          "type": "string"
+        },
+        "authorizedFuelEfficiency": {
+          "type": "number",
+          "format": "float"
+        },
+        "capacity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fuelTankVolume": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "startingMethodTypeCode": {
+          "type": "string"
+        },
+        "vehicleTrimColors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VehicleTrimVehicleTrimColor"
+          }
+        }
+      }
+    },
+    "VehicleTrimColorVehicleStock": {
+      "type": "object",
+      "properties": {
+        "transportationMethodCode": {
+          "type": "string"
+        },
+        "transportationMethodCodeName": {
+          "type": "string"
+        },
+        "stockYn": {
+          "type": "string"
+        }
+      }
+    },
+    "VehicleTrimVehicleTrimColor": {
+      "type": "object",
+      "properties": {
+        "vehicleTrimColorId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "vehicleColorName": {
+          "type": "string"
+        },
+        "vehicleImageFileId": {
+          "type": "string"
+        },
+        "colorImageFileId": {
+          "type": "string"
+        },
+        "stockYn": {
+          "type": "string"
+        },
+        "vehicleStocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/VehicleTrimColorVehicleStock"
+          }
+        }
+      }
+    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -35,6 +240,132 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v2ListCategoryProductsResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/v2ListCategoryProductsResponseData"
+        }
+      }
+    },
+    "v2ListCategoryProductsResponseData": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2ListCategoryProductsResponseDataContent"
+          }
+        }
+      }
+    },
+    "v2ListCategoryProductsResponseDataContent": {
+      "type": "object",
+      "properties": {
+        "productDisplayId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "product": {
+          "$ref": "#/definitions/ContentProduct"
+        }
+      }
+    },
+    "v2ListProductGroupsResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/v2ListProductGroupsResponseData"
+        }
+      }
+    },
+    "v2ListProductGroupsResponseData": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v2ListProductGroupsResponseDataContent"
+          }
+        }
+      }
+    },
+    "v2ListProductGroupsResponseDataContent": {
+      "type": "object",
+      "properties": {
+        "displayProductCategoryId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "displayProductCategoryName": {
+          "type": "string"
+        }
+      }
+    },
+    "v2ListProductsResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/v2ListProductsResponseData"
+        }
+      }
+    },
+    "v2ListProductsResponseData": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "sidoCode": {
+          "type": "string"
+        },
+        "transportationAreaGroupId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "transportationAreaGroupName": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "mainImageFileId": {
+          "type": "string"
+        },
+        "basisPrice": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "vehicleTrims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataVehicleTrim"
           }
         }
       }
