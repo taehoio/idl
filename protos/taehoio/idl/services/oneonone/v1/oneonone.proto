@@ -11,34 +11,22 @@ option java_package = "com.github.taehoio.idl.services.oneonone.v1";
 
 service OneononeService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/oneonone/v1/health"
-    };
+    option (google.api.http) = {get: "/oneonone/v1/health"};
   }
   rpc ListCategories(ListCategoriesRequest) returns (ListCategoriesResponse) {
-    option (google.api.http) = {
-      get: "/oneonone/v1/categories"
-    };
+    option (google.api.http) = {get: "/oneonone/v1/categories"};
   }
   rpc ListQuestionsByCategoryId(ListQuestionsByCategoryIdRequest) returns (ListQuestionsByCategoryIdResponse) {
-    option (google.api.http) = {
-      get: "/oneonone/v1/categories/{category_id}/questions"
-    };
+    option (google.api.http) = {get: "/oneonone/v1/categories/{category_id}/questions"};
   }
   rpc GetRandomQuestionByCategoryId(GetRandomQuestionByCategoryIdRequest) returns (GetRandomQuestionByCategoryIdResponse) {
-    option (google.api.http) = {
-      get: "/oneonone/v1/categories/{category_id}/questions/random"
-    };
+    option (google.api.http) = {get: "/oneonone/v1/categories/{category_id}/questions/random"};
   }
   rpc GetQuestion(GetQuestionRequest) returns (GetQuestionResponse) {
-    option (google.api.http) = {
-      get: "/oneonone/v1/questions/{id}"
-    };
+    option (google.api.http) = {get: "/oneonone/v1/questions/{id}"};
   }
   rpc GetRandomQuestion(GetRandomQuestionRequest) returns (GetRandomQuestionResponse) {
-    option (google.api.http) = {
-      get: "/oneonone/v1/questions/random"
-    };
+    option (google.api.http) = {get: "/oneonone/v1/questions/random"};
   }
 }
 

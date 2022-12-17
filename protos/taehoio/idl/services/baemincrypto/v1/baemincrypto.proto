@@ -11,9 +11,7 @@ option java_package = "com.github.taehoio.idl.services.baemincrypto.v1";
 
 service BaemincryptoService {
   rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
-    option (google.api.http) = {
-      get: "/baemincrypto/v1/health"
-    };
+    option (google.api.http) = {get: "/baemincrypto/v1/health"};
   }
   rpc EncryptUserBaedalHeaderValue(EncryptUserBaedalHeaderValueRequest) returns (EncryptUserBaedalHeaderValueResponse) {
     option (google.api.http) = {

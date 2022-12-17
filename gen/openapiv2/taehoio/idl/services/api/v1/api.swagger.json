@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1HealthCheckResponse"
+              "$ref": "#/definitions/servicesapiv1HealthCheckResponse"
             }
           },
           "default": {
@@ -97,7 +97,7 @@
         }
       }
     },
-    "v1HealthCheckResponse": {
+    "servicesapiv1HealthCheckResponse": {
       "type": "object"
     },
     "v1HelloResponse": {

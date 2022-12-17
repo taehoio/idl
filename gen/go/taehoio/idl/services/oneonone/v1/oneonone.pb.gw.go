@@ -254,20 +254,21 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/oneonone/v1/health"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/oneonone/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OneononeService_HealthCheck_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OneononeService_HealthCheck_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_HealthCheck_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_HealthCheck_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -278,20 +279,21 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/oneonone/v1/categories"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/oneonone/v1/categories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OneononeService_ListCategories_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OneononeService_ListCategories_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_ListCategories_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_ListCategories_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -302,20 +304,21 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OneononeService_ListQuestionsByCategoryId_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OneononeService_ListQuestionsByCategoryId_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_ListQuestionsByCategoryId_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_ListQuestionsByCategoryId_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -326,20 +329,21 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions/random"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OneononeService_GetRandomQuestionByCategoryId_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OneononeService_GetRandomQuestionByCategoryId_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_GetRandomQuestionByCategoryId_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_GetRandomQuestionByCategoryId_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -350,20 +354,21 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/{id}"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OneononeService_GetQuestion_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OneononeService_GetQuestion_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_GetQuestion_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_GetQuestion_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -374,20 +379,21 @@ func RegisterOneononeServiceHandlerServer(ctx context.Context, mux *runtime.Serv
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/random"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_OneononeService_GetRandomQuestion_0(ctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_OneononeService_GetRandomQuestion_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_GetRandomQuestion_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_GetRandomQuestion_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -437,19 +443,20 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/oneonone/v1/health"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/HealthCheck", runtime.WithHTTPPathPattern("/oneonone/v1/health"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OneononeService_HealthCheck_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_OneononeService_HealthCheck_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_HealthCheck_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_HealthCheck_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -458,19 +465,20 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/oneonone/v1/categories"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListCategories", runtime.WithHTTPPathPattern("/oneonone/v1/categories"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OneononeService_ListCategories_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_OneononeService_ListCategories_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_ListCategories_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_ListCategories_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -479,19 +487,20 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/ListQuestionsByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OneononeService_ListQuestionsByCategoryId_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_OneononeService_ListQuestionsByCategoryId_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_ListQuestionsByCategoryId_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_ListQuestionsByCategoryId_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -500,19 +509,20 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions/random"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestionByCategoryId", runtime.WithHTTPPathPattern("/oneonone/v1/categories/{category_id}/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OneononeService_GetRandomQuestionByCategoryId_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_OneononeService_GetRandomQuestionByCategoryId_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_GetRandomQuestionByCategoryId_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_GetRandomQuestionByCategoryId_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -521,19 +531,20 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/{id}"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/{id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OneononeService_GetQuestion_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_OneononeService_GetQuestion_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_GetQuestion_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_GetQuestion_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -542,19 +553,20 @@ func RegisterOneononeServiceHandlerClient(ctx context.Context, mux *runtime.Serv
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
-		ctx, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/random"))
+		var annotatedContext context.Context
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/taehoio.idl.services.oneonone.v1.OneononeService/GetRandomQuestion", runtime.WithHTTPPathPattern("/oneonone/v1/questions/random"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_OneononeService_GetRandomQuestion_0(ctx, inboundMarshaler, client, req, pathParams)
-		ctx = runtime.NewServerMetadataContext(ctx, md)
+		resp, md, err := request_OneononeService_GetRandomQuestion_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
-			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_OneononeService_GetRandomQuestion_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_OneononeService_GetRandomQuestion_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 

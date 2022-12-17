@@ -5,12 +5,11 @@ go 1.19
 require (
 	github.com/bufbuild/buf v1.10.0
 	github.com/golang/mock v1.6.0
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.10.3
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.14.0
 	github.com/rakyll/gotest v0.0.6
 	golang.org/x/tools v0.4.0
 	google.golang.org/genproto v0.0.0-20221207170731-23e4bf6bdc37
 	google.golang.org/grpc v1.51.0
-	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0
 	google.golang.org/protobuf v1.28.2-0.20220831092852-f930b1dc76e8
 )
 
@@ -35,7 +34,6 @@ require (
 	github.com/gofrs/flock v0.8.1 // indirect
 	github.com/gofrs/uuid v4.3.1+incompatible // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
-	github.com/golang/glog v1.0.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/pprof v0.0.0-20221102093814-76f304f74e5e // indirect
@@ -71,7 +69,6 @@ require (
 	go.uber.org/zap v1.23.0 // indirect
 	golang.org/x/mod v0.7.0 // indirect
 	golang.org/x/net v0.4.0 // indirect
-	golang.org/x/oauth2 v0.0.0-20221014153046-6fdb5e3db783 // indirect
 	golang.org/x/sync v0.1.0 // indirect
 	golang.org/x/sys v0.3.0 // indirect
 	golang.org/x/term v0.3.0 // indirect
