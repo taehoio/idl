@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package taehoio.idl.services.car.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "github.com/taehoio/idl/gen/go/taehoio/idl/services/car/v1;carv1";
+option java_multiple_files = true;
+option java_outer_classname = "CarProto";
+option java_package = "com.github.taehoio.idl.services.car.v1";
+
+service CarService {
+  rpc HealthCheck(HealthCheckRequest) returns (HealthCheckResponse) {
+    option (google.api.http) = {
+      get: "/car/v1/health"
+    };
+  }
+}
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {}
